@@ -1,12 +1,23 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class SongDetail extends Component {
+  constructor() {
+    super();
+    this.state = {
+      token: "",
+      ApiData: []
+    };
+  }
+
+  componentDidMount() {}
+
   render() {
     return (
-      <div>
-        <h2>Song Title: </h2>
-        <h2>Artist: </h2>
-        <img src="" />
+      <div className="details">
+        <p>BPM: </p>
+        <p>Energy: </p>
+        <p>Danceability: </p>
       </div>
     );
   }
