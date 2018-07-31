@@ -68,6 +68,7 @@ class Search extends Component {
             id={item.id}
             key={i}
             token={this.state.token}
+            addToPlaylist={this.props.addToPlaylist}
           />
         </li>
       );

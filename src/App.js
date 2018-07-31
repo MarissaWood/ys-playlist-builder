@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       token: null,
-      isLoggedIn: false
+      isLoggedIn: false,
+      playlist: []
     };
   }
 
@@ -20,6 +21,13 @@ class App extends Component {
       isLoggedIn: true
     });
   }
+
+  addToPlaylist = () => {
+    let newSong = "song";
+    this.setState({
+      playlist: [...this.state.playlist, newSong]
+    });
+  };
 
   // checkForToken = () => {
   //   if (!this.state.isLoggedIn) {
@@ -61,8 +69,8 @@ class App extends Component {
           {login}
         </header>
         <div className="main">
-          <Search />
-          <Playlist />
+          <Search addToPlaylist={this.addToPlaylist} />
+          <Playlist list={this.state.playlist} />
         </div>
       </div>
     );
