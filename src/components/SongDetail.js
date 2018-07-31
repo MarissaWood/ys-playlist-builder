@@ -11,9 +11,9 @@ class SongDetail extends Component {
   }
 
   msToTime = duration => {
-    let milliseconds = parseInt((duration % 1000) / 100, 10);
-    let seconds = parseInt((duration / 1000) % 60, 10);
-    let minutes = parseInt((duration / (1000 * 60)) % 60, 10);
+    let milliseconds = parseInt((duration % 1000) / 100);
+    let seconds = parseInt((duration / 1000) % 60);
+    let minutes = parseInt((duration / (1000 * 60)) % 60);
     // minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 

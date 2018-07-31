@@ -71,7 +71,7 @@ class Search extends Component {
   };
 
   render() {
-    let searchResults = this.state.searchResponse.map((item, idx) => {
+    let searchResults = this.state.searchResponse.map((item, i) => {
       // console.log(item);
       return (
         <li>
@@ -80,7 +80,7 @@ class Search extends Component {
             artist={item.artists[0].name}
             image={item.album.images[2].url}
             id={item.id}
-            key={idx}
+            key={i}
             token={this.state.token}
           />
         </li>
@@ -91,27 +91,31 @@ class Search extends Component {
       <div>
         <h1>Search by: </h1>
         <form>
-          <div>
-            <label>Track</label>
-            <input
-              type="radio"
-              name="mode"
-              value="track"
-              checked
-              onChange={this.handleInput}
-            />
+          <div className="radio-buttons">
+            <div className="track">
+              <input
+                type="radio"
+                name="mode"
+                value="track"
+                checked
+                onChange={this.handleInput}
+              />
+              <label>Track</label>
+            </div>
+            <div className="artist">
+              <input
+                type="radio"
+                name="mode"
+                value="artist"
+                onChange={this.handleInput}
+              />
+              <label>Artist</label>
+            </div>
           </div>
-          <div>
-            <label>Artist:</label>
-            <input
-              type="radio"
-              name="mode"
-              value="artist"
-              onChange={this.handleInput}
-            />
+          <div className="search-box">
+            <input type="text" name="query" onChange={this.handleInput} />
+            <input type="submit" value="Search" onClick={this.handleSearch} />
           </div>
-          <input type="text" name="query" onChange={this.handleInput} />
-          <input type="submit" value="Search" onClick={this.handleSearch} />
         </form>
         <ul>{searchResults}</ul>
       </div>

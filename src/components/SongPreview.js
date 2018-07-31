@@ -13,7 +13,7 @@ class SongPreview extends Component {
             <strong>{this.props.title}</strong>, by {this.props.artist}
           </p>
         </div>
-        <div classname="bottomRow">
+        <div className="bottomRow">
           <SongDetail id={this.props.id} token={this.props.token} />
         </div>
       </div>

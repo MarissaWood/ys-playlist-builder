@@ -8,17 +8,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isLoggedIn: false,
-      token: null
+      token: null,
+      isLoggedIn: false
     };
   }
 
   componentDidMount() {
     let spotify_token = window.location.hash.substr(14, 163);
-    this.setState({ token: spotify_token });
-    if (this.state.token) {
-      this.setState({ isLoggedIn: true });
-    }
+    this.setState({
+      token: spotify_token,
+      isLoggedIn: true
+    });
   }
 
   render() {
