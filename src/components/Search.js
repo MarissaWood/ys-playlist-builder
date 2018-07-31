@@ -60,7 +60,7 @@ class Search extends Component {
     axios
       .get(searchUrl, config)
       .then(res => {
-        console.log(res);
+        console.log(res.data);
         this.setState({
           searchResponse: res.data.tracks.items
         });
@@ -72,7 +72,7 @@ class Search extends Component {
 
   render() {
     let searchResults = this.state.searchResponse.map((item, idx) => {
-      console.log(item);
+      // console.log(item);
       return (
         <li>
           <SongPreview
@@ -81,6 +81,7 @@ class Search extends Component {
             image={item.album.images[2].url}
             id={item.id}
             key={idx}
+            token={this.state.token}
           />
         </li>
       );

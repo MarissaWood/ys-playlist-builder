@@ -7,11 +7,15 @@ class SongPreview extends Component {
   render() {
     return (
       <div className="song-preview">
-        <img src={this.props.image} alt="song preview" />
-        <p>
-          {this.props.title}, by {this.props.artist}
-        </p>
-        <SongDetail id={this.props.id} token={this.props.token} />
+        <div className="topRow">
+          <img src={this.props.image} alt="song preview" />
+          <p className="title">
+            <strong>{this.props.title}</strong>, by {this.props.artist}
+          </p>
+        </div>
+        <div classname="bottomRow">
+          <SongDetail id={this.props.id} token={this.props.token} />
+        </div>
       </div>
     );
   }

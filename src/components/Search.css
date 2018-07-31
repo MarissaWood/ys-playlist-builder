@@ -1,8 +1,14 @@
 li {
     list-style-type: none;
     margin-bottom: 10px;
+    border-bottom: 1px black solid;
 }
 li div {
     display: flex; 
+    flex-direction: column;
+}
+
+.topRow, .details {
     flex-direction: row;
 }
+
