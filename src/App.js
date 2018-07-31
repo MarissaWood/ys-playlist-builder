@@ -21,6 +21,14 @@ class App extends Component {
     });
   }
 
+  // checkForToken = () => {
+  //   if (!this.state.isLoggedIn) {
+  //     login = <a href={url}>Log in to Spotify to create playlists</a>;
+  //   } else {
+  //     login = <p>Your token expires in --:-- </p>;
+  //   }
+  // };
+
   render() {
     const url =
       "https://accounts.spotify.com/authorize?client_id=" +
@@ -34,7 +42,11 @@ class App extends Component {
     if (!this.state.isLoggedIn) {
       login = <a href={url}>Log in to Spotify to create playlists</a>;
     } else {
-      login = <p>You are logged in</p>;
+      login = (
+        <p>
+          <a href={url}>Refresh</a> token
+        </p>
+      );
     }
 
     return (

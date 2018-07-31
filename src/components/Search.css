@@ -38,6 +38,7 @@ input[type=text] {
     width: 200px;
     padding: 10px;
     margin: 8px 0;
+    font-size: 18px;
 }
 
 input[type=submit] {

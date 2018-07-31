@@ -8,37 +8,21 @@ class Search extends Component {
     super(props);
     this.state = {
       query: "",
-      mode: "track",
-      searchResponse: [],
-      token: ""
+      searchResponseTrack: [],
+      token: "",
+      offset: 0
     };
   }
 
   componentDidMount() {
-    // axios
-    //   .get("https://accounts.spotify.com/api/token", {
-    //     params: {
-    //       client_id: process.env.REACT_APP_CLIENT_ID,
-    //       response_type: "token",
-    //       redirect_uri: "http://localhost:3000"
-    //     }
-    //   })
-    //   .then(res => {
-    //     console.log(res);
-    //     this.setState({
-    //       token: res.data.token
-    //     });
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
     let spotify_token = window.location.hash.substr(14, 163);
     this.setState({ token: spotify_token });
   }
 
   handleInput = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      offset: 0
     });
   };
 
@@ -54,15 +38,16 @@ class Search extends Component {
     let searchUrl =
       "https://api.spotify.com/v1/search?q=" +
       this.state.query +
-      "&type=" +
-      this.state.mode +
-      "&limit=10";
+      "&type=track&limit=10&offset=" +
+      this.state.offset;
     axios
       .get(searchUrl, config)
       .then(res => {
         console.log(res.data);
+        let newOffset = this.state.offset + 10;
         this.setState({
-          searchResponse: res.data.tracks.items
+          searchResponseTrack: res.data.tracks.items,
+          offset: newOffset
         });
       })
       .catch(err => {
@@ -71,7 +56,8 @@ class Search extends Component {
   };
 
   render() {
-    let searchResults = this.state.searchResponse.map((item, i) => {
+    let searchResults;
+    searchResults = this.state.searchResponseTrack.map((item, i) => {
       // console.log(item);
       return (
         <li>
@@ -86,38 +72,21 @@ class Search extends Component {
         </li>
       );
     });
-
+    let nextButton;
+    if (this.state.searchResponseTrack[1]) {
+      nextButton = <button onClick={this.handleSearch}>Next Page</button>;
+    }
     return (
       <div>
-        <h1>Search by: </h1>
+        <h2>Search by Track or Artist name: </h2>
         <form>
-          <div className="radio-buttons">
-            <div className="track">
-              <input
-                type="radio"
-                name="mode"
-                value="track"
-                checked
-                onChange={this.handleInput}
-              />
-              <label>Track</label>
-            </div>
-            <div className="artist">
-              <input
-                type="radio"
-                name="mode"
-                value="artist"
-                onChange={this.handleInput}
-              />
-              <label>Artist</label>
-            </div>
-          </div>
           <div className="search-box">
             <input type="text" name="query" onChange={this.handleInput} />
             <input type="submit" value="Search" onClick={this.handleSearch} />
           </div>
         </form>
         <ul>{searchResults}</ul>
+        {nextButton}
       </div>
     );
   }
