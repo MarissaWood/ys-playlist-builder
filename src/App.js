@@ -17,8 +17,7 @@ class App extends Component {
   componentDidMount() {
     let spotify_token = window.location.hash.substr(20, 169);
     this.setState({
-      token: spotify_token,
-      isLoggedIn: true
+      token: spotify_token
     });
   }
 
@@ -28,14 +27,6 @@ class App extends Component {
       playlist: [...this.state.playlist, newSong]
     });
   };
-
-  // checkForToken = () => {
-  //   if (!this.state.isLoggedIn) {
-  //     login = <a href={url}>Log in to Spotify to create playlists</a>;
-  //   } else {
-  //     login = <p>Your token expires in --:-- </p>;
-  //   }
-  // };
 
   render() {
     const url =
@@ -47,7 +38,7 @@ class App extends Component {
 
     let login;
 
-    if (!this.state.isLoggedIn) {
+    if (!this.state.token) {
       login = <a href={url}>Log in to Spotify to create playlists</a>;
     } else {
       login = (
@@ -56,7 +47,6 @@ class App extends Component {
         </p>
       );
     }
-
     return (
       <div className="App">
         <header className="App-header">
