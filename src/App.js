@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let spotify_token = window.location.hash.substr(14, 163);
+    let spotify_token = window.location.hash.substr(20, 169);
     this.setState({
       token: spotify_token,
       isLoggedIn: true
@@ -43,7 +43,7 @@ class App extends Component {
       process.env.REACT_APP_CLIENT_ID +
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
-      "&response_type=token&redirect_uri=http://localhost:3000";
+      "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
 
     let login;
 
@@ -70,7 +70,7 @@ class App extends Component {
         </header>
         <div className="main">
           <Search addToPlaylist={this.addToPlaylist} />
-          <Playlist list={this.state.playlist} />
+          {/* <Playlist list={this.state.playlist} /> */}
         </div>
       </div>
     );
