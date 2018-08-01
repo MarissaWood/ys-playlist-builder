@@ -4,7 +4,7 @@
 
 This app searches Spotify's music library for songs and display's audio data relevant to fitness instructors.  I built this app because I use Spotify to make my class playlists and I wanted an easy way to see the BPM of songs in their database. 
 
-![ysplaylist](https://user-images.githubusercontent.com/26101268/43541351-35447b66-9598-11e8-8271-60639a0a450a.png)
+# ![ysplaylist](https://user-images.githubusercontent.com/26101268/43541351-35447b66-9598-11e8-8271-60639a0a450a.png)
 
 ## Technologies Used
 
@@ -16,7 +16,7 @@ After a user authenticates with Spotify's OAuth, they can search for tracks by s
 
 Spotify's web API requires a token, so users need to sign in to get a token to perform searches.  
 
-![ysplaylist2](https://user-images.githubusercontent.com/26101268/43542372-ca6005b0-959a-11e8-8c2d-b69180156c02.png)
+# ![ysplaylist2](https://user-images.githubusercontent.com/26101268/43542372-ca6005b0-959a-11e8-8c2d-b69180156c02.png)
 
 ## Installation instructions 
 
