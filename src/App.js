@@ -38,6 +38,7 @@ class App extends Component {
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
       "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
+    // "&response_type=token&redirect_uri=http://localhost:3000";
 
     let login;
 
@@ -58,7 +59,7 @@ class App extends Component {
           {login}
         </header>
         <div className="main">
-          <Search addToPlaylist={this.addToPlaylist} />
+          <Search addToPlaylist={this.addToPlaylist} token={this.state.token} />
           {/* <Playlist list={this.state.playlist} /> */}
           <Guidelines />
         </div>

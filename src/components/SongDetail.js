@@ -33,7 +33,7 @@ class SongDetail extends Component {
     axios
       .get(searchUrl, config)
       .then(res => {
-        // console.log(res.data);
+        console.log(res.data);
         this.setState({
           songData: res.data
         });
@@ -41,6 +41,31 @@ class SongDetail extends Component {
       .catch(err => {
         console.log(err);
       });
+  }
+
+  componentDidUpdate() {
+    if (this.props.id !== this.state.songData.id) {
+      let searchUrl;
+      searchUrl = "https://api.spotify.com/v1/audio-features/" + this.props.id;
+      let auth = "Bearer " + this.props.token;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: auth
+        }
+      };
+      axios
+        .get(searchUrl, config)
+        .then(res => {
+          console.log(res.data);
+          this.setState({
+            songData: res.data
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 
   render() {

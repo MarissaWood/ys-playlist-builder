@@ -12,9 +12,9 @@ class SongPreview extends Component {
           <p className="title">
             <strong>{this.props.title}</strong>, by {this.props.artist}
           </p>
-          <button className="add" onClick={this.props.addToPlaylist}>
+          {/* <button className="add" onClick={this.props.addToPlaylist}>
             + Add to Playlist
-          </button>
+          </button> */}
         </div>
         <div className="bottomRow">
           <SongDetail id={this.props.id} token={this.props.token} />
