@@ -22,7 +22,7 @@ Spotify's web API requires a token, so users need to sign in to get a token to p
 
 To run this project locally, clone this repository, run ``` $ npm install```, run ```$ npm start ```, and navigate to localhost:3000 
 
-a deployed version of this app can be found at [http://ys-play-list.surge.sh](http://ys-play-list.surge.sh) 
+a deployed version of this app can be found at [http://ys-playlist.surge.sh](http://ys-playlist.surge.sh) 
 
 ## Unsolved problems 
 
