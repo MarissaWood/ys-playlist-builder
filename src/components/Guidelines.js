@@ -12,7 +12,7 @@ class Guidelines extends Component {
           <strong>Search for a track</strong> to get data from Spotify. The song
           duration, BPM, Danceability score and Energy score can help you pick
           songs for the different sections of your Yoga Sculpt class.
-          Danceability and Energy scores range for 0 - 1.0.
+          Danceability and Energy scores range from 0 - 1.0.
         </p>
 
         <h2>Section Guidelines</h2>
