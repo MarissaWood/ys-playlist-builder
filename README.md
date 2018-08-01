@@ -16,6 +16,8 @@ After a user authenticates with Spotify's OAuth, they can search for tracks by s
 
 Spotify's web API requires a token, so users need to sign in to get a token to perform searches.  
 
+![ysplaylist2](https://user-images.githubusercontent.com/26101268/43542372-ca6005b0-959a-11e8-8c2d-b69180156c02.png)
+
 ## Installation instructions 
 
 To run this project locally, clone this repository, run ``` $ npm install```, run ```$ npm start ```, and navigate to localhost:3000 
