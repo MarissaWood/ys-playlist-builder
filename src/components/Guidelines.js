@@ -6,7 +6,7 @@ class Guidelines extends Component {
   render() {
     return (
       <div className="guidelines">
-        <img src={cpylogo} alt="" className="cpy-logo" />
+        <img src={cpylogo} alt="" className="logo" />
         <h1>App Instructions</h1>
         <p>
           <strong>Search for a track</strong> to get data from Spotify. The song

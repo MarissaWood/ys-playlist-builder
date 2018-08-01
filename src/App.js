@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       token: null,
       isLoggedIn: false,
-      playlist: []
+      playlist: [],
+      refreshToken: false
     };
   }
 
@@ -36,18 +37,28 @@ class App extends Component {
       process.env.REACT_APP_CLIENT_ID +
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
-      "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
-    // "&response_type=token&redirect_uri=http://localhost:3000";
+      // "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
+      "&response_type=token&redirect_uri=http://localhost:3000";
 
     let login;
+    let message;
 
     if (!this.state.token) {
       login = <a href={url}>Log in to Spotify to see song data</a>;
+      message = (
+        <p className="alert">
+          Spotify requires an account access token to search their database.
+          Click the link in the header to log in!
+        </p>
+      );
     } else {
       login = (
         <p>
           <a href={url}>Refresh</a> token
         </p>
+      );
+      message = (
+        <Search addToPlaylist={this.addToPlaylist} token={this.state.token} />
       );
     }
     return (
@@ -58,7 +69,7 @@ class App extends Component {
           {login}
         </header>
         <div className="main">
-          <Search addToPlaylist={this.addToPlaylist} token={this.state.token} />
+          {message}
           {/* <Playlist list={this.state.playlist} /> */}
           <Guidelines />
         </div>
