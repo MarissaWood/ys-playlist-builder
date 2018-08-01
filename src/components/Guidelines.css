@@ -1,0 +1,13 @@
+.guidelines {
+    max-width: 50%;
+}
+
+.section-guidelines { 
+    padding: 15px 45px;
+
+}
+
+.section-guidelines li {
+    padding: 5px;
+    font-size: 20px;
+}

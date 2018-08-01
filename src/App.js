@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import Search from "./components/Search";
-import Playlist from "./components/Playlist";
+// import Playlist from "./components/Playlist";
 // import { Link } from "react-router-dom"
+import Guidelines from "./components/Guidelines";
 
 class App extends Component {
   constructor() {
@@ -39,7 +40,7 @@ class App extends Component {
     let login;
 
     if (!this.state.token) {
-      login = <a href={url}>Log in to Spotify to create playlists</a>;
+      login = <a href={url}>Log in to Spotify to see song data</a>;
     } else {
       login = (
         <p>
@@ -61,6 +62,7 @@ class App extends Component {
         <div className="main">
           <Search addToPlaylist={this.addToPlaylist} />
           {/* <Playlist list={this.state.playlist} /> */}
+          <Guidelines />
         </div>
       </div>
     );
