@@ -4,6 +4,7 @@ import Search from "./components/Search";
 // import Playlist from "./components/Playlist";
 // import { Link } from "react-router-dom"
 import Guidelines from "./components/Guidelines";
+import spotifylogo from "./images/spotifylogo.png";
 
 class App extends Component {
   constructor() {
@@ -51,11 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img
-            src="https://images-eu.ssl-images-amazon.com/images/I/51rttY7a%2B9L.png"
-            alt=" "
-            className="logo"
-          />
+          <img src={spotifylogo} alt=" " className="logo" />
           <h1 className="App-title">Yoga Sculpt Playlist Building Tool</h1>
           {login}
         </header>
