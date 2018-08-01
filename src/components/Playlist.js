@@ -11,7 +11,7 @@ class Playlist extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.playlist != this.props.list) {
+    if (this.state.playlist !== this.props.list) {
       this.setState({
         playlist: this.props.list
       });
