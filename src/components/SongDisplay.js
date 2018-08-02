@@ -4,7 +4,9 @@ class SongDisplay extends Component {
   render() {
     return (
       <div>
-        <p>Song Name: </p>
+        <p>
+          {this.props.title}, by {this.props.artist}{" "}
+        </p>
       </div>
     );
   }

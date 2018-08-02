@@ -19,6 +19,8 @@ class SongPreview extends Component {
         <div className="bottomRow">
           <SongDetail
             id={this.props.id}
+            title={this.props.title}
+            artist={this.props.artist}
             token={this.props.token}
             addToPlaylist={this.props.addToPlaylist}
           />

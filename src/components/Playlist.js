@@ -9,14 +9,13 @@ class Playlist extends Component {
       // console.log(item);
       return (
         <li>
-          "song"
-          {/* <SongDisplay
+          <SongDisplay
             title={item.title}
-            // artist={item.artist}
+            artist={item.artist}
             // image={item.image}
             // id={item.id}
             // key={i}
-          /> */}
+          />
         </li>
       );
     });

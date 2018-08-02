@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       token: null,
       isLoggedIn: false,
-      playlist: ["song", "song"],
+      playlist: [],
       refreshToken: false
     };
   }
@@ -24,10 +24,10 @@ class App extends Component {
     });
   }
 
-  addToPlaylist = () => {
-    let newSong = "song";
+  addToPlaylist = song => {
+    // let newSong = "song";
     this.setState({
-      playlist: [...this.state.playlist, newSong]
+      playlist: [...this.state.playlist, song]
     });
   };
 

@@ -90,7 +90,18 @@ class SongDetail extends Component {
           {time}
         </p>
         <p>
-          <button onClick={this.props.addToPlaylist}>+ to playlist</button>
+          <button
+            onClick={() =>
+              this.props.addToPlaylist({
+                id: this.props.id,
+                duration: this.state.songData.duration_ms,
+                title: this.props.title,
+                artist: this.props.artist
+              })
+            }
+          >
+            + to playlist
+          </button>
         </p>
       </div>
     );
