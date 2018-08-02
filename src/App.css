@@ -30,7 +30,10 @@
 
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.radio-buttons {
+  margin-top: 10px;
+}
+
+input[type="radio"] {
+  margin-left: 20px;
 }

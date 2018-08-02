@@ -13,7 +13,8 @@ class App extends Component {
       token: null,
       isLoggedIn: false,
       playlist: [],
-      refreshToken: false
+      refreshToken: false,
+      rightColumn: "playlist"
     };
   }
 
@@ -24,8 +25,19 @@ class App extends Component {
     });
   }
 
+  // displayToggle = e => {
+  //   if (e.target.value === "guidelines") {
+  //     this.setState({ rightColumn: true });
+  //   }
+  //   if (e.target.value === "playlist") {
+  //     this.setState({ rightColumn: false });
+  //   }
+  // };
+  handleOptionChange = e => {
+    this.setState({ rightColumn: e.target.value });
+  };
+
   addToPlaylist = song => {
-    // let newSong = "song";
     this.setState({
       playlist: [...this.state.playlist, song]
     });
@@ -61,6 +73,16 @@ class App extends Component {
         <Search addToPlaylist={this.addToPlaylist} token={this.state.token} />
       );
     }
+
+    let toggle;
+
+    if (this.state.rightColumn === "playlist") {
+      toggle = <Playlist playlist={this.state.playlist} />;
+    }
+    if (this.state.rightColumn === "guidelines") {
+      toggle = <Guidelines />;
+    }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -71,8 +93,28 @@ class App extends Component {
         <div className="main">
           {message}
           <div className="right-column">
-            <Playlist playlist={this.state.playlist} />
-            {/* <Guidelines /> */}
+            <form className="radio-buttons">
+              <label>
+                <input
+                  type="radio"
+                  name="right"
+                  value="playlist"
+                  onChange={this.handleOptionChange}
+                  defaultChecked
+                />
+                Show Playlist
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="right"
+                  value="guidelines"
+                  onChange={this.handleOptionChange}
+                />
+                Show Section Guidelines
+              </label>
+            </form>
+            {toggle}
           </div>
         </div>
       </div>

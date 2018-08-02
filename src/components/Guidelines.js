@@ -7,7 +7,6 @@ class Guidelines extends Component {
     return (
       <div className="guidelines">
         <img src={cpylogo} alt="" className="logo" />
-        <h1>App Instructions</h1>
         <p>
           <strong>Search for a track</strong> to get data from Spotify. The song
           duration, BPM, Danceability score and Energy score can help you pick
