@@ -25,14 +25,6 @@ class App extends Component {
     });
   }
 
-  // displayToggle = e => {
-  //   if (e.target.value === "guidelines") {
-  //     this.setState({ rightColumn: true });
-  //   }
-  //   if (e.target.value === "playlist") {
-  //     this.setState({ rightColumn: false });
-  //   }
-  // };
   handleOptionChange = e => {
     this.setState({ rightColumn: e.target.value });
   };
@@ -49,8 +41,8 @@ class App extends Component {
       process.env.REACT_APP_CLIENT_ID +
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
-      // "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
-      "&response_type=token&redirect_uri=http://localhost:3000";
+      "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
+    // "&response_type=token&redirect_uri=http://localhost:3000";
 
     let login;
     let message;
