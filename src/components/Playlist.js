@@ -17,7 +17,6 @@ class Playlist extends Component {
   render() {
     let playlistResults;
     playlistResults = this.props.playlist.map((item, i) => {
-      // console.log(item);
       return (
         <li>
           <SongDisplay
@@ -26,11 +25,18 @@ class Playlist extends Component {
             image={item.image}
             bpm={item.bpm}
             time={item.time}
-            // key={i}
+            key={i}
           />
         </li>
       );
     });
+
+    let clearButton;
+    if (playlistResults[1]) {
+      clearButton = (
+        <button onClick={this.props.clearPlaylist}>Clear Playlist</button>
+      );
+    }
 
     let totalTime;
     totalTime = this.props.playlist.reduce(
@@ -49,6 +55,7 @@ class Playlist extends Component {
           <br />
         </div>
         {playlistResults}
+        {clearButton}
       </div>
     );
   }

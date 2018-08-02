@@ -35,6 +35,10 @@ class App extends Component {
     });
   };
 
+  clearPlaylist = e => {
+    this.setState({ playlist: [] });
+  };
+
   render() {
     const url =
       "https://accounts.spotify.com/authorize?client_id=" +
@@ -69,7 +73,12 @@ class App extends Component {
     let toggle;
 
     if (this.state.rightColumn === "playlist") {
-      toggle = <Playlist playlist={this.state.playlist} />;
+      toggle = (
+        <Playlist
+          playlist={this.state.playlist}
+          clearPlaylist={this.clearPlaylist}
+        />
+      );
     }
     if (this.state.rightColumn === "guidelines") {
       toggle = <Guidelines />;
