@@ -82,7 +82,7 @@ class Search extends Component {
       );
     }
     return (
-      <div>
+      <div className="left-column">
         <h2>Search by Track or Artist name: </h2>
         <form>
           <div className="search-box">

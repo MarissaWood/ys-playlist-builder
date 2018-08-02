@@ -1,5 +1,14 @@
+.left-column {
+    padding: 10px 30px 10px 10px;
+}
+
 form {
     display: inline-block;
+}
+
+.right-column {
+    min-width: 40%;
+    max-width: 50%;
 }
 
 ul {
