@@ -89,6 +89,9 @@ class SongDetail extends Component {
           <strong>Duration:</strong> <br />
           {time}
         </p>
+        <p>
+          <button onClick={this.props.addToPlaylist}>+ to playlist</button>
+        </p>
       </div>
     );
   }

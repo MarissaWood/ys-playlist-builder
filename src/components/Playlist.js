@@ -3,34 +3,20 @@ import SongDisplay from "./SongDisplay";
 import "./Playlist.css";
 
 class Playlist extends Component {
-  constructor() {
-    super();
-    this.state = {
-      playlist: []
-    };
-  }
-
-  componentDidUpdate() {
-    if (this.state.playlist !== this.props.list) {
-      this.setState({
-        playlist: this.props.list
-      });
-    }
-  }
-
   render() {
     let playlistResults;
-    playlistResults = this.state.playlist.map((item, i) => {
+    playlistResults = this.props.playlist.map((item, i) => {
       // console.log(item);
       return (
         <li>
-          <SongDisplay
-            title={item.name}
-            artist={item.artist}
-            image={item.image}
-            id={item.id}
-            key={i}
-          />
+          "song"
+          {/* <SongDisplay
+            title={item.title}
+            // artist={item.artist}
+            // image={item.image}
+            // id={item.id}
+            // key={i}
+          /> */}
         </li>
       );
     });

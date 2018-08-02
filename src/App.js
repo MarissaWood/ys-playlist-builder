@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Search from "./components/Search";
-// import Playlist from "./components/Playlist";
+import Playlist from "./components/Playlist";
 // import { Link } from "react-router-dom"
 import Guidelines from "./components/Guidelines";
 import spotifylogo from "./images/spotifylogo.png";
@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       token: null,
       isLoggedIn: false,
-      playlist: [],
+      playlist: ["song", "song"],
       refreshToken: false
     };
   }
@@ -37,8 +37,8 @@ class App extends Component {
       process.env.REACT_APP_CLIENT_ID +
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
-      "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
-    // "&response_type=token&redirect_uri=http://localhost:3000";
+      // "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
+      "&response_type=token&redirect_uri=http://localhost:3000";
 
     let login;
     let message;
@@ -70,8 +70,10 @@ class App extends Component {
         </header>
         <div className="main">
           {message}
-          {/* <Playlist list={this.state.playlist} /> */}
-          <Guidelines />
+          <div className="right-column">
+            <Playlist playlist={this.state.playlist} />
+            {/* <Guidelines /> */}
+          </div>
         </div>
       </div>
     );

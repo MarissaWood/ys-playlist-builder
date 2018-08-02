@@ -75,7 +75,11 @@ class Search extends Component {
     });
     let nextButton;
     if (this.state.searchResponseTrack[1]) {
-      nextButton = <button onClick={this.handleSearch}>Next Page</button>;
+      nextButton = (
+        <button className="next" onClick={this.handleSearch}>
+          Next Page
+        </button>
+      );
     }
     return (
       <div>

@@ -37,7 +37,7 @@ input[type=text] {
     font-size: 18px;
 }
 
-input[type=submit], button {
+input[type=submit], .next {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -47,6 +47,6 @@ input[type=submit], button {
     font-size: 14px;
 }
 
-button {
+.next {
     margin-bottom: 30px;
 }
