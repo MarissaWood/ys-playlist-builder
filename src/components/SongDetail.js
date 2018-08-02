@@ -11,13 +11,13 @@ class SongDetail extends Component {
   }
 
   msToTime = duration => {
-    let milliseconds = parseInt((duration % 1000) / 100);
+    // let milliseconds = parseInt((duration % 1000) / 100);
     let seconds = parseInt((duration / 1000) % 60);
     let minutes = parseInt((duration / (1000 * 60)) % 60);
     // minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    return minutes + ":" + seconds + "." + milliseconds;
+    return minutes + ":" + seconds; // + "." + milliseconds;
   };
 
   componentDidMount() {
@@ -70,11 +70,12 @@ class SongDetail extends Component {
 
   render() {
     const time = this.msToTime(this.state.songData.duration_ms);
+    const bpm = Math.round(this.state.songData.tempo);
     return (
       <div className="details">
         <p>
           <strong>BPM:</strong> <br />
-          {this.state.songData.tempo}
+          {bpm}
         </p>
         <p>
           <strong>Energy:</strong> <br />
