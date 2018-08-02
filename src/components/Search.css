@@ -1,5 +1,14 @@
+.left-column {
+    padding: 10px 30px 10px 10px;
+}
+
 form {
     display: inline-block;
+}
+
+.right-column {
+    min-width: 40%;
+    max-width: 50%;
 }
 
 ul {
@@ -20,10 +29,6 @@ li div {
     flex-direction: row;
 }
 
-.radio-buttons {
-    display: flex;
-    flex-direction: row;
-}
 
 .track, .artist {
     margin: 0 10px;
@@ -41,7 +46,7 @@ input[type=text] {
     font-size: 18px;
 }
 
-input[type=submit] {
+input[type=submit], .next {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -49,4 +54,8 @@ input[type=submit] {
     margin: 8px 8px;
     cursor: pointer;
     font-size: 14px;
+}
+
+.next {
+    margin-bottom: 30px;
 }

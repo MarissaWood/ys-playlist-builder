@@ -15,8 +15,8 @@ class Search extends Component {
   }
 
   componentDidMount() {
-    let spotify_token = window.location.hash.substr(14, 163);
-    this.setState({ token: spotify_token });
+    // let spotify_token = window.location.hash.substr(14, 163);
+    // this.setState({ token: this.props.token });
   }
 
   handleInput = e => {
@@ -28,7 +28,7 @@ class Search extends Component {
 
   handleSearch = e => {
     e.preventDefault();
-    let auth = "Bearer " + this.state.token;
+    let auth = "Bearer " + this.props.token;
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ class Search extends Component {
             image={item.album.images[2].url}
             id={item.id}
             key={i}
-            token={this.state.token}
+            token={this.props.token}
             addToPlaylist={this.props.addToPlaylist}
           />
         </li>
@@ -75,10 +75,14 @@ class Search extends Component {
     });
     let nextButton;
     if (this.state.searchResponseTrack[1]) {
-      nextButton = <button onClick={this.handleSearch}>Next Page</button>;
+      nextButton = (
+        <button className="next" onClick={this.handleSearch}>
+          Next Page
+        </button>
+      );
     }
     return (
-      <div>
+      <div className="left-column">
         <h2>Search by Track or Artist name: </h2>
         <form>
           <div className="search-box">

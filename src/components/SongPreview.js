@@ -8,16 +8,20 @@ class SongPreview extends Component {
     return (
       <div className="song-preview">
         <div className="topRow">
-          <img src={this.props.image} alt="song preview" />
+          <img src={this.props.image} alt="song preview" className="icon" />
           <p className="title">
             <strong>{this.props.title}</strong>, by {this.props.artist}
           </p>
-          <button className="add" onClick={this.props.addToPlaylist}>
-            + Add to Playlist
-          </button>
         </div>
         <div className="bottomRow">
-          <SongDetail id={this.props.id} token={this.props.token} />
+          <SongDetail
+            id={this.props.id}
+            title={this.props.title}
+            artist={this.props.artist}
+            image={this.props.image}
+            token={this.props.token}
+            addToPlaylist={this.props.addToPlaylist}
+          />
         </div>
       </div>
     );
