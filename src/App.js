@@ -5,6 +5,7 @@ import Playlist from "./components/Playlist";
 // import { Link } from "react-router-dom"
 import Guidelines from "./components/Guidelines";
 import spotifylogo from "./images/spotifylogo.png";
+import axios from "axios";
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,8 @@ class App extends Component {
       isLoggedIn: false,
       playlist: [],
       refreshToken: false,
-      rightColumn: "playlist"
+      rightColumn: "playlist",
+      user_id: null
     };
   }
 
@@ -39,7 +41,21 @@ class App extends Component {
     this.setState({ playlist: [] });
   };
 
-  savePlaylist = () => {
+  savePlaylist = e => {
+    // get user id
+    e.preventDefault();
+    let auth = "Bearer " + this.state.token;
+    const config = {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: auth
+      }
+    };
+    axios.get("https://api.spotify.com/v1/me", config).then(res => {
+      // console.log(res.data.id);
+      this.setState({ user_id: res.data.id });
+    });
     // create a new playlist
     // add songs to playlist
   };

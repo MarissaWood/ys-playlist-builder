@@ -43,7 +43,7 @@ class Search extends Component {
     axios
       .get(searchUrl, config)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         let newOffset = this.state.offset + 10;
         this.setState({
           searchResponseTrack: res.data.tracks.items,

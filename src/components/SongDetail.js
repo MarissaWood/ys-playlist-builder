@@ -33,7 +33,7 @@ class SongDetail extends Component {
     axios
       .get(searchUrl, config)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         this.setState({
           songData: res.data
         });
@@ -57,7 +57,7 @@ class SongDetail extends Component {
       axios
         .get(searchUrl, config)
         .then(res => {
-          console.log(res.data);
+          // console.log(res.data);
           this.setState({
             songData: res.data
           });
