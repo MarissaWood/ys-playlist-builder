@@ -15,8 +15,8 @@ class App extends Component {
       isLoggedIn: false,
       playlist: [],
       refreshToken: false,
-      rightColumn: "playlist",
-      user_id: null
+      rightColumn: "playlist" //,
+      // user_id: null
     };
   }
 
@@ -52,12 +52,50 @@ class App extends Component {
         Authorization: auth
       }
     };
-    axios.get("https://api.spotify.com/v1/me", config).then(res => {
-      // console.log(res.data.id);
-      this.setState({ user_id: res.data.id });
-    });
-    // create a new playlist
+    axios
+      .get("https://api.spotify.com/v1/me", config)
+      // .then(res => {
+      // // console.log(res.data.id);
+      // this.setState({ user_id: res.data.id });
+      // })
+      // create a new playlist
+      .then(res => {
+        console.log(res);
+        let user_id = res.data.id;
+        let url = "https://api.spotify.com/v1/users/" + user_id + "/playlists";
+        axios({
+          method: "post",
+          url: url,
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: auth
+          },
+          data: {
+            name: "New YS Playlist",
+            description: "playlist built with ys-playlist.surge.sh",
+            public: "false"
+          }
+        })
+          .then(res => {
+            console.log(res);
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      })
+      .catch(err => {
+        console.log(err);
+      });
     // add songs to playlist
+    // .then(res => {
+    //   let playlist_id = res.data.id
+    //   let songs = this.state.map // get song ids
+    //   //put song ids into uris
+    //   let addUrl = "" + user_id + "" + playlist_id
+    //   return axios.post(addUrl, config)
+    // })
+    // .then(res => console.log(res));
   };
 
   render() {
