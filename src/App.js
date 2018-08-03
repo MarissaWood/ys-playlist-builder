@@ -54,13 +54,9 @@ class App extends Component {
     };
     axios
       .get("https://api.spotify.com/v1/me", config)
-      // .then(res => {
-      // // console.log(res.data.id);
-      // this.setState({ user_id: res.data.id });
-      // })
       // create a new playlist
       .then(res => {
-        console.log(res);
+        console.log(res); // response from getting user_id
         let user_id = res.data.id;
         let url = "https://api.spotify.com/v1/users/" + user_id + "/playlists";
         axios({
@@ -78,7 +74,32 @@ class App extends Component {
           }
         })
           .then(res => {
-            console.log(res);
+            console.log(res); // response from creating the playlist
+            // put together string of track uris
+            let trackUris;
+            trackUris =
+              "spotify:track:7vOHCi5rHgYmdN965qeL2l,spotify:track:0SSeiqgsSOVIOvMM8ZccRP"; // static string just for testing:
+            // add songs to playlist
+            let addSongUrl =
+              "https://api.spotify.com/v1/users/" +
+              user_id +
+              "/playlists/" +
+              res.data.id +
+              "/tracks?uris=" +
+              trackUris;
+            return axios({
+              // fill in axios call details
+              method: "post",
+              url: addSongUrl,
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: auth
+              }
+            })
+              .then(res => console.log(res))
+              .catch(err => {
+                console.log(err);
+              });
           })
           .catch(err => {
             console.log(err);
@@ -87,15 +108,6 @@ class App extends Component {
       .catch(err => {
         console.log(err);
       });
-    // add songs to playlist
-    // .then(res => {
-    //   let playlist_id = res.data.id
-    //   let songs = this.state.map // get song ids
-    //   //put song ids into uris
-    //   let addUrl = "" + user_id + "" + playlist_id
-    //   return axios.post(addUrl, config)
-    // })
-    // .then(res => console.log(res));
   };
 
   render() {
