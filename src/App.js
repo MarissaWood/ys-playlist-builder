@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let spotify_token = window.location.hash.substr(14, 163);
+    let spotify_token = window.location.hash.substr(14, 195);
     this.setState({
       token: spotify_token
     });
@@ -46,8 +46,8 @@ class App extends Component {
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
       // "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
-    "&response_type=token&redirect_uri=http://localhost:3000"
-    + "&scope=playlist-modify-private";
+      "&response_type=token&redirect_uri=http://localhost:3000" +
+      "&scope=playlist-modify-private";
 
     let login;
     let message;
