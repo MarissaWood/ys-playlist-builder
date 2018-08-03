@@ -41,6 +41,12 @@ class App extends Component {
     this.setState({ playlist: [] });
   };
 
+  removeLastSong = () => {
+    let array = [...this.state.playlist];
+    array.pop();
+    this.setState({ playlist: array });
+  };
+
   savePlaylist = e => {
     // get user id
     e.preventDefault();
@@ -156,6 +162,7 @@ class App extends Component {
         <Playlist
           playlist={this.state.playlist}
           clearPlaylist={this.clearPlaylist}
+          removeLastSong={this.removeLastSong}
           savePlaylist={this.savePlaylist}
         />
       );
