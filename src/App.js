@@ -39,6 +39,11 @@ class App extends Component {
     this.setState({ playlist: [] });
   };
 
+  savePlaylist = () => {
+    // create a new playlist
+    // add songs to playlist
+  };
+
   render() {
     const url =
       "https://accounts.spotify.com/authorize?client_id=" +
@@ -78,6 +83,7 @@ class App extends Component {
         <Playlist
           playlist={this.state.playlist}
           clearPlaylist={this.clearPlaylist}
+          savePlaylist={this.savePlaylist}
         />
       );
     }

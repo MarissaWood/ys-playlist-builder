@@ -32,9 +32,15 @@ class Playlist extends Component {
     });
 
     let clearButton;
+    let saveButton;
     if (playlistResults[1]) {
       clearButton = (
         <button onClick={this.props.clearPlaylist}>Clear Playlist</button>
+      );
+      saveButton = (
+        <button onClick={this.props.savePlaylist}>
+          Save PlayList to your account
+        </button>
       );
     }
 
@@ -56,6 +62,7 @@ class Playlist extends Component {
         </div>
         {playlistResults}
         {clearButton}
+        {saveButton}
       </div>
     );
   }
