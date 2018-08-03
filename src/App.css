@@ -27,7 +27,7 @@
   font-size: 1.2em;
   color: red;
   width: 50%;
-
+  font-weight: bold;
 }
 
 .radio-buttons {
@@ -36,4 +36,9 @@
 
 input[type="radio"] {
   margin-left: 20px;
+}
+
+.refresh {
+  text-decoration: none;
+  font-weight: bold;
 }

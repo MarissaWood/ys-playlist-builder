@@ -76,9 +76,14 @@ class App extends Component {
           .then(res => {
             console.log(res); // response from creating the playlist
             // put together string of track uris
-            let trackUris;
-            trackUris =
-              "spotify:track:7vOHCi5rHgYmdN965qeL2l,spotify:track:0SSeiqgsSOVIOvMM8ZccRP"; // static string just for testing:
+            let trackUris = "";
+            for (let i = 0; i < this.state.playlist.length; i++) {
+              if (i < this.state.playlist.length - 1) {
+                trackUris += "spotify:track:" + this.state.playlist[i].id + ",";
+              } else {
+                trackUris += "spotify:track:" + this.state.playlist[i].id;
+              }
+            }
             // add songs to playlist
             let addSongUrl =
               "https://api.spotify.com/v1/users/" +
@@ -88,7 +93,6 @@ class App extends Component {
               "/tracks?uris=" +
               trackUris;
             return axios({
-              // fill in axios call details
               method: "post",
               url: addSongUrl,
               headers: {
@@ -116,26 +120,29 @@ class App extends Component {
       process.env.REACT_APP_CLIENT_ID +
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
-      // "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
-      "&response_type=token&redirect_uri=http://localhost:3000" +
-      "&scope=playlist-modify-private";
+      "&response_type=token&redirect_uri=http://ys-playlist.surge.sh";
+    // "&response_type=token&redirect_uri=http://localhost:3000" +
+    ("&scope=playlist-modify-private");
 
     let login;
     let message;
 
     if (!this.state.token) {
-      login = <a href={url}>Log in to Spotify to see song data</a>;
+      login = (
+        <a href={url} className="refresh">
+          <button>Log in</button>
+        </a>
+      );
       message = (
         <p className="alert">
-          Spotify requires an account access token to search their database.
-          Click the link in the header to log in!
+          Log in to Spotify to start building your playlist!
         </p>
       );
     } else {
       login = (
-        <p>
-          <a href={url}>Refresh</a> token
-        </p>
+        <a href={url} className="refresh">
+          Refresh token
+        </a>
       );
       message = (
         <Search addToPlaylist={this.addToPlaylist} token={this.state.token} />
