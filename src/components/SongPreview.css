@@ -1,6 +1,13 @@
-img {
-    width: 64px;
-    height: auto;
+.song-preview {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+
+.album {
+    height: 64px;
+    width: auto;
+    margin: 5px;
 }
 
 .icon {

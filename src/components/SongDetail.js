@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./SongDetail.css";
+import playlist from "../images/Icon_Playlist_Blue.svg";
 
 class SongDetail extends Component {
   constructor() {
@@ -74,8 +75,8 @@ class SongDetail extends Component {
     return (
       <div className="details">
         <p>
-          <strong>BPM:</strong> <br />
-          {bpm}
+          BPM:
+          <div className="BPM">{bpm}</div>
         </p>
         <p>
           <strong>Energy:</strong> <br />
@@ -89,7 +90,10 @@ class SongDetail extends Component {
           <strong>Duration:</strong> <br />
           {time}
         </p>
-        <button
+        <img
+          src={playlist}
+          alt=" "
+          className="add"
           onClick={() =>
             this.props.addToPlaylist({
               id: this.props.id,
@@ -101,9 +105,7 @@ class SongDetail extends Component {
               time: time
             })
           }
-        >
-          + to playlist
-        </button>
+        />
       </div>
     );
   }

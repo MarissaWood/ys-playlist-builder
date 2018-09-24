@@ -8,9 +8,11 @@ class SongPreview extends Component {
     return (
       <div className="song-preview">
         <div className="topRow">
-          <img src={this.props.image} alt="song preview" className="icon" />
+          <img src={this.props.image} alt="song preview" className="album" />
           <p className="title">
-            <strong>{this.props.title}</strong>, by {this.props.artist}
+            <strong>{this.props.title}</strong>
+            <br />
+            {this.props.artist}
           </p>
         </div>
         <div className="bottomRow">
