@@ -1,6 +1,10 @@
 .playlist-song {
-    max-width: 700px;
+    background-color: white;
     display: grid;
+    color: black;
     grid-template-columns: 60px 1fr 80px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
 }
 
