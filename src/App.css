@@ -2,19 +2,26 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 80px;
+.inner {
+  vertical-align: middle;
 }
 
 .App-header {
   background-color: #F7F7F7;
-  height: 150px;
+  height: 140px;
   padding: 20px;
   color: black;
 }
 
 .App-title {
   font-size: 1.5em;
+  display: inline-block;
+}
+
+.icon-header {
+  height: 50px;
+  width: auto;
+  padding: 20px 50px;
 }
 
 .App-intro {

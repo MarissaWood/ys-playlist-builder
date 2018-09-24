@@ -4,6 +4,9 @@ import Search from "./components/Search";
 import Playlist from "./components/Playlist";
 import Guidelines from "./components/Guidelines";
 import logo from "./images/Logo_Yog-Playlist.svg";
+import searchPink from "./images/Icon_Search_Magenta.svg";
+import guidesGreen from "./images/Icon_Guides_Green.svg";
+import playlistBlue from "./images/Icon_Playlist_Blue.svg";
 import axios from "axios";
 
 class App extends Component {
@@ -173,9 +176,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} alt=" " className="logo" />
-          <h1 className="App-title">YOG-PLAYLIST</h1>
+          <img src={logo} alt=" " className="logo inner" />
+          <h1 className="App-title inner">YOG-PLAYLIST</h1>
+          <br />
           {login}
+          <br />
+          <img src={searchPink} alt=" " className="icon-header" />
+          <img src={playlistBlue} alt=" " className="icon-header" />
+          <img src={guidesGreen} alt=" " className="icon-header" />
         </header>
         <div className="main">
           {message}
