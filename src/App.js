@@ -165,9 +165,18 @@ class App extends Component {
           <br />
           {login}
           <br />
-          <img src={searchPink} alt=" " className="icon-header" />
-          <img src={playlistBlue} alt=" " className="icon-header" />
-          <img src={guidesGreen} alt=" " className="icon-header" />
+          <div className="color-icons">
+            <img src={searchPink} alt=" " className="icon-header" />
+            <h3>SEARCH</h3>
+          </div>
+          <div className="color-icons">
+            <img src={playlistBlue} alt=" " className="icon-header" />
+            <h3>PLAYLIST</h3>
+          </div>
+          <div className="color-icons">
+            <img src={guidesGreen} alt=" " className="icon-header" />
+            <h3>GUIDES</h3>
+          </div>
         </header>
         <div className="main">
           <div className="search card">{message}</div>

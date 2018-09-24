@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SongDisplay from "./SongDisplay";
+import playlist from "../images/Icon_Playlist_White.svg";
 import "./Playlist.css";
 
 class Playlist extends Component {
@@ -63,13 +64,9 @@ class Playlist extends Component {
 
     return (
       <div>
-        <h1>PlayList</h1>
-        <div className="stats">
-          <p>
-            <strong>Total time:</strong> {totalTime}
-          </p>
-          <br />
-        </div>
+        <img src={playlist} alt=" " className="icon-white inner" />
+        <h2 className="card-header inner">TOTAL TIME: {totalTime}</h2>
+        <br />
         {playlistResults}
         {clearButton}
         {removeButton}
