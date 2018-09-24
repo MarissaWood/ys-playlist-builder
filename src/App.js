@@ -157,22 +157,6 @@ class App extends Component {
       );
     }
 
-    let toggle;
-
-    if (this.state.rightColumn === "playlist") {
-      toggle = (
-        <Playlist
-          playlist={this.state.playlist}
-          clearPlaylist={this.clearPlaylist}
-          removeLastSong={this.removeLastSong}
-          savePlaylist={this.savePlaylist}
-        />
-      );
-    }
-    if (this.state.rightColumn === "guidelines") {
-      toggle = <Guidelines />;
-    }
-
     return (
       <div className="App">
         <header className="App-header">
@@ -186,30 +170,19 @@ class App extends Component {
           <img src={guidesGreen} alt=" " className="icon-header" />
         </header>
         <div className="main">
-          {message}
-          <div className="right-column">
-            <form className="radio-buttons">
-              <label>
-                <input
-                  type="radio"
-                  name="right"
-                  value="playlist"
-                  onChange={this.handleOptionChange}
-                  defaultChecked
-                />
-                Show Playlist
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="right"
-                  value="guidelines"
-                  onChange={this.handleOptionChange}
-                />
-                Show Section Guidelines
-              </label>
-            </form>
-            {toggle}
+          <div className="search card">{message}</div>
+
+          <div className="playlist card">
+            <Playlist
+              playlist={this.state.playlist}
+              clearPlaylist={this.clearPlaylist}
+              removeLastSong={this.removeLastSong}
+              savePlaylist={this.savePlaylist}
+            />
+          </div>
+
+          <div className="guidelines card">
+            <Guidelines />
           </div>
         </div>
       </div>

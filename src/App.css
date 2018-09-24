@@ -24,8 +24,22 @@
   padding: 20px 50px;
 }
 
-.App-intro {
-  font-size: large;
+.card {
+  color: white;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.search {
+  background-color: #D94D7D;
+}
+
+.playlist {
+  background-color: #65BFD4;
+}
+
+.guidelines {
+  background-color: #70D8B4;
 }
 
 .alert {
@@ -36,13 +50,6 @@
   font-weight: bold;
 }
 
-.radio-buttons {
-  margin-top: 10px;
-}
-
-input[type="radio"] {
-  margin-left: 20px;
-}
 
 .refresh {
   text-decoration: none;
