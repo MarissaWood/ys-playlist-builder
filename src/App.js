@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import Playlist from "./components/Playlist";
-// import { Link } from "react-router-dom"
 import Guidelines from "./components/Guidelines";
-import spotifylogo from "./images/spotifylogo.png";
+import logo from "./images/Logo_Yog-Playlist.svg";
 import axios from "axios";
 
 class App extends Component {
@@ -174,8 +173,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={spotifylogo} alt=" " className="logo" />
-          <h1 className="App-title">Yoga Sculpt Playlist Building Tool</h1>
+          <img src={logo} alt=" " className="logo" />
+          <h1 className="App-title">YOG-PLAYLIST</h1>
           {login}
         </header>
         <div className="main">
