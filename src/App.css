@@ -10,7 +10,7 @@
   top: 0px;
   background-color: #F7F7F7;
   height: 180px;
-  padding: 20px;
+  padding: 10px 0 20px 0;
   color: black;
   position: fixed;
   z-index: 1;
@@ -18,7 +18,8 @@
 }
 
 .cards {
-  margin-top: 220px;
+  margin-top: 210px;
+  padding-top: 5px;
 }
 
 .App-title {
