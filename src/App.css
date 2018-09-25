@@ -50,7 +50,7 @@ h3 {
 }
 .card {
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 5px;
 }
 
@@ -92,7 +92,7 @@ h3 {
   and (orientation: portrait) {
 
     .App-header {
-      height: 146px;
+      height: 142px;
       width: 375px;
       padding-top: 29px;
     }
@@ -108,7 +108,7 @@ h3 {
     }
 
     .cards {
-      margin-top: 182px;
+      margin-top: 186px;
       padding-top: 5px;
       display: inline-block;
     }
