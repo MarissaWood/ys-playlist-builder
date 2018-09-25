@@ -17,7 +17,7 @@ class App extends Component {
       isLoggedIn: false,
       playlist: [],
       refreshToken: false,
-      tab: "search"
+      tab: "playlist"
     };
   }
 
@@ -188,6 +188,26 @@ class App extends Component {
       );
     }
 
+    if (this.state.tab === "playlist") {
+      cards = (
+        <div className="main cards">
+          {searchCard}
+          {playlistCard}
+          {guideCard}
+        </div>
+      );
+    }
+
+    if (this.state.tab === "guide") {
+      cards = (
+        <div className="main cards">
+          {playlistCard}
+          {guideCard}
+          {searchCard}
+        </div>
+      );
+    }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -197,15 +217,30 @@ class App extends Component {
           {login}
           <br />
           <div className="color-icons">
-            <img src={searchPink} alt=" " className="icon-header" />
+            <img
+              src={searchPink}
+              alt=" "
+              className="icon-header"
+              onClick={() => this.changeTab("search")}
+            />
             <h3>SEARCH</h3>
           </div>
           <div className="color-icons">
-            <img src={playlistBlue} alt=" " className="icon-header" />
+            <img
+              src={playlistBlue}
+              alt=" "
+              className="icon-header"
+              onClick={() => this.changeTab("playlist")}
+            />
             <h3>PLAYLIST</h3>
           </div>
           <div className="color-icons">
-            <img src={guidesGreen} alt=" " className="icon-header" />
+            <img
+              src={guidesGreen}
+              alt=" "
+              className="icon-header"
+              onClick={() => this.changeTab("guide")}
+            />
             <h3>GUIDES</h3>
           </div>
         </header>
