@@ -7,10 +7,18 @@
 }
 
 .App-header {
+  top: 0px;
   background-color: #F7F7F7;
   height: 180px;
   padding: 20px;
   color: black;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.cards {
+  margin-top: 220px;
 }
 
 .App-title {
