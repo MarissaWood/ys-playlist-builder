@@ -5,14 +5,13 @@ import "./Playlist.css";
 
 class Playlist extends Component {
   msToTime = duration => {
-    // let milliseconds = parseInt((duration % 1000) / 100);
     let seconds = parseInt((duration / 1000) % 60);
     let minutes = parseInt((duration / (1000 * 60)) % 60);
     let hours = parseInt((duration / (1000 * 60 * 60)) % 24);
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    return hours + ":" + minutes + ":" + seconds; //+ "." + milliseconds;
+    return hours + ":" + minutes + ":" + seconds;
   };
 
   render() {

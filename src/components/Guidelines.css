@@ -1,15 +1,9 @@
-
-
 .section-guidelines { 
     padding: 15px 45px;
     margin-top: 0;
 }
 
 .section-guidelines li {
-    padding: 5px;
-    font-size: 20px;
-}
-
-.cpy-logo {
-    margin-top: 20px;
+    font-size: 1.17rem;
+    text-align: left;
 }

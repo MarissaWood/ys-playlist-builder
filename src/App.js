@@ -17,8 +17,7 @@ class App extends Component {
       isLoggedIn: false,
       playlist: [],
       refreshToken: false,
-      rightColumn: "playlist" //,
-      // user_id: null
+      rightColumn: "playlist"
     };
   }
 
@@ -178,9 +177,8 @@ class App extends Component {
             <h3>GUIDES</h3>
           </div>
         </header>
-        <div className="main">
+        <div className="main cards">
           <div className="search card">{message}</div>
-
           <div className="playlist card">
             <Playlist
               playlist={this.state.playlist}
