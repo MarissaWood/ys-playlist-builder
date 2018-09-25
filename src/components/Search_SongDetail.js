@@ -78,7 +78,7 @@ class SongDetail extends Component {
       <div className="details">
         <div>
           BPM:
-          <div className="BPM">{bpm}</div>
+          <div className="BPM"> {bpm} </div>
         </div>
         <div>
           <img src={energy} alt="energy" className="icon-black" /> <br />
