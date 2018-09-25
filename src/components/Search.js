@@ -82,7 +82,7 @@ class Search extends Component {
         <img
           src={search}
           alt=" "
-          className="icon-white inner"
+          className="icon-white inner search"
           onClick={this.handleSearch}
         />
         <form onSubmit={this.handleSearch}>
