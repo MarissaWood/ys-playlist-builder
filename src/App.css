@@ -47,6 +47,7 @@ h3 {
 
 .card-header {
   display: inline-block;
+  font-weight: normal;
 }
 
 .search {

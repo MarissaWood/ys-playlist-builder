@@ -65,7 +65,9 @@ class Playlist extends Component {
     return (
       <div>
         <img src={playlist} alt=" " className="icon-white inner" />
-        <h2 className="card-header inner">TOTAL TIME: {totalTime}</h2>
+        <h2 className="card-header inner">
+          <strong>TOTAL TIME:</strong> {totalTime}
+        </h2>
         <br />
         <ul>{playlistResults}</ul>
         {clearButton}
