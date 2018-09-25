@@ -17,7 +17,7 @@ class App extends Component {
       isLoggedIn: false,
       playlist: [],
       refreshToken: false,
-      rightColumn: "playlist"
+      tab: "search"
     };
   }
 
@@ -46,6 +46,10 @@ class App extends Component {
     let array = [...this.state.playlist];
     array.pop();
     this.setState({ playlist: array });
+  };
+
+  changeTab = cardTab => {
+    this.setState({ tab: cardTab });
   };
 
   savePlaylist = e => {
@@ -156,6 +160,34 @@ class App extends Component {
       );
     }
 
+    let searchCard = <div className="search card">{message}</div>;
+    let playlistCard = (
+      <div className="playlist card">
+        <Playlist
+          playlist={this.state.playlist}
+          clearPlaylist={this.clearPlaylist}
+          removeLastSong={this.removeLastSong}
+          savePlaylist={this.savePlaylist}
+        />
+      </div>
+    );
+    let guideCard = (
+      <div className="guidelines card">
+        <Guidelines />
+      </div>
+    );
+
+    let cards;
+    if (this.state.tab === "search") {
+      cards = (
+        <div className="main cards">
+          {playlistCard}
+          {searchCard}
+          {guideCard}
+        </div>
+      );
+    }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -177,21 +209,7 @@ class App extends Component {
             <h3>GUIDES</h3>
           </div>
         </header>
-        <div className="main cards">
-          <div className="search card">{message}</div>
-          <div className="playlist card">
-            <Playlist
-              playlist={this.state.playlist}
-              clearPlaylist={this.clearPlaylist}
-              removeLastSong={this.removeLastSong}
-              savePlaylist={this.savePlaylist}
-            />
-          </div>
-
-          <div className="guidelines card">
-            <Guidelines />
-          </div>
-        </div>
+        {cards}
       </div>
     );
   }

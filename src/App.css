@@ -14,7 +14,7 @@
   color: black;
   position: fixed;
   z-index: 1;
-  width: 100%;
+  width: 100%; 
 }
 
 .cards {
@@ -93,11 +93,27 @@ h3 {
 
     .App-header {
       height: 149px;
+      width: 375px;
     }
 
     .cards {
       margin-top: 180px;
       padding-top: 5px;
+      display: inline-block;
+    }
+
+    .card:nth-child(1) {
+      left: -342px;
+    }
+
+    .card:nth-child(3) {
+      left: 362px;
+    }
+
+    .card {
+      height: 499px;
+      width: 344px;
+      position: absolute;
     }
 
     .main {
