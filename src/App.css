@@ -83,3 +83,37 @@ h3 {
   text-decoration: none;
   font-weight: bold;
 }
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .App-header {
+      height: 149px;
+    }
+
+    .cards {
+      margin-top: 180px;
+      padding-top: 5px;
+    }
+
+    .main {
+      display: block;
+    }
+
+    .color-icons {
+      padding: 8px;
+    }
+
+    .color-icons img {
+      height: 30px;
+      width: auto;
+    }
+
+    .icon-header {
+      padding: 5px 20px; 
+    }
+}

@@ -4,7 +4,7 @@
 }
 
 .details div {
-    margin: 16px 0; 
+    margin: 16px 0 5px; 
 }
 
 .add {
@@ -30,3 +30,25 @@
     text-align: center;
     font-size: 1.08rem;
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .album {
+        width: 30px;
+        height: 30px;
+        margin-left: 12px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .BPM {
+        margin-bottom: 0;
+    }
+
+  }
