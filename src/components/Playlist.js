@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SongDisplay from "./SongDisplay";
+import SongDisplay from "./Playlist_SongDisplay";
 import playlist from "../images/Icon_Playlist_White.svg";
 import "./Playlist.css";
 
@@ -67,7 +67,7 @@ class Playlist extends Component {
         <img src={playlist} alt=" " className="icon-white inner" />
         <h2 className="card-header inner">TOTAL TIME: {totalTime}</h2>
         <br />
-        {playlistResults}
+        <ul>{playlistResults}</ul>
         {clearButton}
         {removeButton}
         {saveButton}
