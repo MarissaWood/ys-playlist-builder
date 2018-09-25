@@ -7,7 +7,7 @@ class Guidelines extends Component {
     return (
       <div className="Guidelines">
         <img src={guidelines} alt=" " className="icon-white inner" />
-        <h2 className="card-header inner">Section Guidelines</h2>
+        <h2 className="card-header inner">SECTION GUIDELINES</h2>
         <ul className="section-guidelines">
           <li>Integration (110-120 BPM)</li>
           <li>Sun A (110-120 BPM)</li>
