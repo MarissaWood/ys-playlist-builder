@@ -92,7 +92,7 @@ h3 {
   and (orientation: portrait) {
 
     .App-header {
-      height: 149px;
+      height: 146px;
       width: 375px;
       padding-top: 29px;
     }
@@ -108,7 +108,7 @@ h3 {
     }
 
     .cards {
-      margin-top: 180px;
+      margin-top: 182px;
       padding-top: 5px;
       display: inline-block;
     }
@@ -132,7 +132,7 @@ h3 {
     }
 
     .color-icons {
-      padding: 8px;
+      padding: 22px;
     }
 
     .color-icons img {

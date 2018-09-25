@@ -6,7 +6,11 @@ class Guidelines extends Component {
   render() {
     return (
       <div className="Guidelines">
-        <img src={guidelines} alt=" " className="icon-white inner" />
+        <img
+          src={guidelines}
+          alt=" "
+          className="icon-white inner guide-white"
+        />
         <h2 className="card-header inner">SECTION GUIDELINES</h2>
         <ul className="section-guidelines">
           <li>Integration (110-120 BPM)</li>

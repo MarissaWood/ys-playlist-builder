@@ -15,6 +15,16 @@
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+
+    .card-header {
+        font-size: 16px;
+    }
+
+    .guide-white {
+        height: 27px;
+        width: 25px;
+    }
+
     .section-guidelines li {
         font-size: 16px;
         text-align: left;
