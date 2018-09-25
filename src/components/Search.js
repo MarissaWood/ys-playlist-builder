@@ -85,7 +85,7 @@ class Search extends Component {
           className="icon-white inner"
           onClick={this.handleSearch}
         />
-        <form>
+        <form onSubmit={this.handleSearch}>
           <div className="search-box">
             <input
               type="text"
