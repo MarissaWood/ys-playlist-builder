@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import "./SongPreview.css";
-import SongDetail from "./SongDetail";
+import SongDetail from "./Search_SongDetail";
 
 class SongPreview extends Component {
   render() {

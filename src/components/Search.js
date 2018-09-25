@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SongPreview from "./SongPreview";
+import SongPreview from "./Search_SongPreview";
 import axios from "axios";
 import search from "../images/Icon_Search_White.svg";
 import "./Search.css";
