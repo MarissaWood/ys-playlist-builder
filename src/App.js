@@ -128,8 +128,8 @@ class App extends Component {
       process.env.REACT_APP_CLIENT_ID +
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
-      "&response_type=token&redirect_uri=http://ys-playlist.surge.sh" +
-      // "&response_type=token&redirect_uri=http://localhost:3000" +
+      // "&response_type=token&redirect_uri=http://ys-playlist.surge.sh" +
+      "&response_type=token&redirect_uri=http://localhost:3000" +
       "&scope=playlist-modify-private";
 
     let login;
