@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./SongDetail.css";
-import playlist from "../images/Icon_Playlist_Blue.svg";
+import playlist from "../images/Icon_Playlist_Magenta.svg";
+import dance from "../images/Icon_Dancing_Black.png";
+import energy from "../images/Icon_Energy_Black.png";
+import songTime from "../images/Icon_Time_Black.png";
 
 class SongDetail extends Component {
   constructor() {
@@ -79,15 +82,15 @@ class SongDetail extends Component {
           <div className="BPM">{bpm}</div>
         </p>
         <p>
-          <strong>Energy:</strong> <br />
+          <img src={energy} alt="energy" /> <br />
           {this.state.songData.energy}
         </p>
         <p>
-          <strong>Danceability:</strong> <br />
+          <img src={dance} alt="dance" className="icon-black" /> <br />
           {this.state.songData.danceability}
         </p>
         <p>
-          <strong>Duration:</strong> <br />
+          <img src={songTime} alt="time" /> <br />
           {time}
         </p>
         <img
