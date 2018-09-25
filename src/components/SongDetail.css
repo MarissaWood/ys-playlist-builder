@@ -3,6 +3,10 @@
     justify-content: space-around;
 }
 
+.details div {
+    margin: 16px 0; 
+}
+
 .add {
     height: 30px;
     width: auto;
@@ -11,7 +15,8 @@
 
 .icon-black {
     height: 24px;
-    width: auto;
+    width: 24px;
+    align-self: center;
 }
 
 .BPM {

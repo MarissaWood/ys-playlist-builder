@@ -15,7 +15,7 @@ class SongDisplay extends Component {
         </div>
         <div className="bottom-row">
           <div>BPM: </div> <div className="BPM">{this.props.bpm}</div>
-          <img src={songTime} />
+          <img src={songTime} alt="time" />
           <div>{this.props.time}</div>
         </div>
       </div>

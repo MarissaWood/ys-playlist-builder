@@ -15,13 +15,12 @@ class SongDetail extends Component {
   }
 
   msToTime = duration => {
-    // let milliseconds = parseInt((duration % 1000) / 100);
-    let seconds = parseInt((duration / 1000) % 60);
-    let minutes = parseInt((duration / (1000 * 60)) % 60);
+    let seconds = parseInt((duration / 1000) % 60, 10);
+    let minutes = parseInt((duration / (1000 * 60)) % 60, 10);
     // minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    return minutes + ":" + seconds; // + "." + milliseconds;
+    return minutes + ":" + seconds;
   };
 
   componentDidMount() {
@@ -77,22 +76,22 @@ class SongDetail extends Component {
     const bpm = Math.round(this.state.songData.tempo);
     return (
       <div className="details">
-        <p>
+        <div>
           BPM:
           <div className="BPM">{bpm}</div>
-        </p>
-        <p>
-          <img src={energy} alt="energy" /> <br />
+        </div>
+        <div>
+          <img src={energy} alt="energy" className="icon-black" /> <br />
           {this.state.songData.energy}
-        </p>
-        <p>
+        </div>
+        <div>
           <img src={dance} alt="dance" className="icon-black" /> <br />
           {this.state.songData.danceability}
-        </p>
-        <p>
-          <img src={songTime} alt="time" /> <br />
+        </div>
+        <div>
+          <img src={songTime} alt="time" className="icon-black" /> <br />
           {time}
-        </p>
+        </div>
         <img
           src={playlist}
           alt=" "

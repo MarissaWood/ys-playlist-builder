@@ -56,7 +56,7 @@ class Search extends Component {
     searchResults = this.state.searchResponseTrack.map((item, i) => {
       // console.log(item);
       return (
-        <li>
+        <li key={i}>
           <SongPreview
             title={item.name}
             artist={item.artists[0].name}

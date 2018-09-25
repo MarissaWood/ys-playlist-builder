@@ -5,9 +5,9 @@ import "./Playlist.css";
 
 class Playlist extends Component {
   msToTime = duration => {
-    let seconds = parseInt((duration / 1000) % 60);
-    let minutes = parseInt((duration / (1000 * 60)) % 60);
-    let hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+    let seconds = parseInt((duration / 1000) % 60, 10);
+    let minutes = parseInt((duration / (1000 * 60)) % 60, 10);
+    let hours = parseInt((duration / (1000 * 60 * 60)) % 24, 10);
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
@@ -18,7 +18,7 @@ class Playlist extends Component {
     let playlistResults;
     playlistResults = this.props.playlist.map((item, i) => {
       return (
-        <li>
+        <li key={i}>
           <SongDisplay
             title={item.title}
             artist={item.artist}
