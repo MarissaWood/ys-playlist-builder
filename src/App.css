@@ -94,6 +94,17 @@ h3 {
     .App-header {
       height: 149px;
       width: 375px;
+      padding-top: 29px;
+    }
+
+    .App-title {
+      font-size: 20px;
+      font-family: montserrat;
+    }
+
+    .logo {
+      height: 25px;
+      width: 25px;
     }
 
     .cards {
