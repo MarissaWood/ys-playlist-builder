@@ -140,13 +140,16 @@ class App extends Component {
 
     if (!this.state.token) {
       login = (
-        <a href={url} className="refresh">
-          <button>Log in</button>
+        <a href={url} className="login">
+          Log in
         </a>
       );
       message = (
         <p className="alert">
-          Log in to Spotify to start building your playlist!
+          <a href={url} className="login">
+            Log in
+          </a>{" "}
+          to Spotify to start building your playlist!
         </p>
       );
     } else {
@@ -181,8 +184,9 @@ class App extends Component {
     if (this.state.tab === "search") {
       cards = (
         <div className="main cards">
-          {playlistCard}
+          {guideCard}
           {searchCard}
+          {playlistCard}
           {guideCard}
         </div>
       );
@@ -194,6 +198,7 @@ class App extends Component {
           {searchCard}
           {playlistCard}
           {guideCard}
+          {searchCard}
         </div>
       );
     }
@@ -204,6 +209,7 @@ class App extends Component {
           {playlistCard}
           {guideCard}
           {searchCard}
+          {playlistCard}
         </div>
       );
     }

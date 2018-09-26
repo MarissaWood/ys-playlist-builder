@@ -78,6 +78,9 @@ h3 {
   font-weight: bold;
 }
 
+.card:nth-child(4) {
+  display: none;
+}
 
 .refresh {
   text-decoration: none;
@@ -87,14 +90,17 @@ h3 {
 
 @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 568px)
+  and (max-device-width: 380px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
     .App-header {
+      top: 0;
       height: 142px;
       width: 375px;
       padding-top: 29px;
+      position: fixed;
+      z-index: 1;
     }
 
     .App-title {
@@ -121,9 +127,95 @@ h3 {
       left: 362px;
     }
 
+    .card:nth-child(4) {
+      left: 714px;
+      display: block;
+    }
+
     .card {
-      height: 510px;
+      min-height: 510px;
       width: 344px;
+      position: absolute;
+    }
+
+    .main {
+      display: block;
+    }
+
+    .color-icons {
+      padding: 22px;
+    }
+
+    .color-icons img {
+      height: 30px;
+      width: auto;
+    }
+
+    .icon-header {
+      padding: 5px 20px; 
+    }
+
+    .left-column .search {
+      padding: 0;
+    }
+
+    input[type=text] {
+      width: 249px;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+}
+
+
+@media only screen 
+  and (min-device-width: 381px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .App-header {
+      top: 0;
+      height: 142px;
+      width: 414px;
+      padding-top: 29px;
+      position: fixed;
+      z-index: 1;
+    }
+
+    .App-title {
+      font-size: 20px;
+      font-family: montserrat;
+    }
+
+    .logo {
+      height: 25px;
+      width: 25px;
+    }
+
+    .cards {
+      margin-top: 186px;
+      padding-top: 5px;
+      display: inline-block;
+    }
+
+    .card:nth-child(1) {
+      left: -372px;
+    }
+
+    .card:nth-child(3) {
+      left: 392px;
+    }
+
+    .card:nth-child(4) {
+      left: 774px;
+      display: block;
+    }
+
+    .card {
+      min-height: 510px;
+      width: 374px;
       position: absolute;
     }
 
