@@ -1,24 +1,24 @@
 import React, { Component } from "react";
-import SongDisplay from "./SongDisplay";
+import SongDisplay from "./Playlist_SongDisplay";
+import playlist from "../images/Icon_Playlist_White.svg";
 import "./Playlist.css";
 
 class Playlist extends Component {
   msToTime = duration => {
-    // let milliseconds = parseInt((duration % 1000) / 100);
-    let seconds = parseInt((duration / 1000) % 60);
-    let minutes = parseInt((duration / (1000 * 60)) % 60);
-    let hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+    let seconds = parseInt((duration / 1000) % 60, 10);
+    let minutes = parseInt((duration / (1000 * 60)) % 60, 10);
+    let hours = parseInt((duration / (1000 * 60 * 60)) % 24, 10);
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    return hours + ":" + minutes + ":" + seconds; //+ "." + milliseconds;
+    return hours + ":" + minutes + ":" + seconds;
   };
 
   render() {
     let playlistResults;
     playlistResults = this.props.playlist.map((item, i) => {
       return (
-        <li>
+        <li key={i}>
           <SongDisplay
             title={item.title}
             artist={item.artist}
@@ -36,16 +36,23 @@ class Playlist extends Component {
     let saveButton;
     if (playlistResults[1]) {
       clearButton = (
-        <button onClick={this.props.clearPlaylist}>Clear Playlist</button>
+        <div onClick={this.props.clearPlaylist} className="playlist-button">
+          Clear Playlist
+        </div>
       );
       removeButton = (
-        <button onClick={this.props.removeLastSong}>Remove last song</button>
+        <div onClick={this.props.removeLastSong} className="playlist-button">
+          Remove last song
+        </div>
       );
       saveButton = (
         <div>
-          <button onClick={this.props.savePlaylist} className="save-playlist">
-            Save PlayList to your account
-          </button>
+          <div
+            onClick={this.props.savePlaylist}
+            className="save-playlist playlist-button"
+          >
+            Save Playlist to your account
+          </div>
           <div className="hoverText">
             Only click this button once! It will save a new playlist{" "}
             <strong>every</strong> time it is pushed.
@@ -63,14 +70,12 @@ class Playlist extends Component {
 
     return (
       <div>
-        <h1>PlayList</h1>
-        <div className="stats">
-          <p>
-            <strong>Total time:</strong> {totalTime}
-          </p>
-          <br />
-        </div>
-        {playlistResults}
+        <img src={playlist} alt=" " className="icon-white inner" />
+        <h2 className="card-header inner">
+          <strong>TOTAL TIME:</strong> {totalTime}
+        </h2>
+        <br />
+        <ul>{playlistResults}</ul>
         {clearButton}
         {removeButton}
         {saveButton}

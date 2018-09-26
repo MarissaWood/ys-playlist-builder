@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 import "./Guidelines.css";
-import cpylogo from "../images/cpylogo.png";
+import guidelines from "../images/Icon_Guides_White.svg";
 
 class Guidelines extends Component {
   render() {
     return (
-      <div className="guidelines">
-        <img src={cpylogo} alt="" className="logo" />
-        <p>
-          <strong>Search for a track</strong> to get data from Spotify. The song
-          duration, BPM, Danceability score and Energy score can help you pick
-          songs for the different sections of your Yoga Sculpt class.
-          Danceability and Energy scores range from 0 - 1.0.
-        </p>
-
-        <h2>Section Guidelines</h2>
+      <div className="Guidelines">
+        <img
+          src={guidelines}
+          alt=" "
+          className="icon-white inner guide-white"
+        />
+        <h2 className="card-header inner">SECTION GUIDELINES</h2>
         <ul className="section-guidelines">
           <li>Integration (110-120 BPM)</li>
           <li>Sun A (110-120 BPM)</li>

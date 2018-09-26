@@ -2,43 +2,251 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.inner {
+  vertical-align: middle;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  top: 0px;
+  background-color: #F7F7F7;
+  height: 180px;
+  padding: 10px 0 20px 0;
+  color: black;
+  position: fixed;
+  z-index: 1;
+  width: 100%; 
+}
+
+.cards {
+  margin-top: 210px;
+  padding-top: 5px;
 }
 
 .App-title {
   font-size: 1.5em;
+  display: inline;
 }
 
-.App-intro {
-  font-size: large;
+.icon-header {
+  height: 50px;
+  width: auto;
+  padding: 20px 50px;
+}
+
+.color-icons {
+  display: inline-block;
+}
+
+.icon-white {
+  height: 35px;
+  width: auto;
+  padding: 10px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+.card {
+  color: white;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.card-header {
+  display: inline-block;
+  font-weight: normal;
+}
+
+.search {
+  background-color: #D94D7D;
+}
+
+.playlist {
+  background-color: #65BFD4;
+}
+
+.guidelines {
+  background-color: #70D8B4;
 }
 
 .alert {
-  margin: 40px 30px;
+  margin: 30px 23%;
   font-size: 1.2em;
-  color: red;
   width: 50%;
   font-weight: bold;
 }
 
-.radio-buttons {
-  margin-top: 10px;
-}
-
-input[type="radio"] {
-  margin-left: 20px;
+.card:nth-child(4) {
+  display: none;
 }
 
 .refresh {
   text-decoration: none;
   font-weight: bold;
+}
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 380px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .App-header {
+      top: 0;
+      height: 142px;
+      width: 375px;
+      padding-top: 29px;
+      position: fixed;
+      z-index: 1;
+    }
+
+    .App-title {
+      font-size: 20px;
+      font-family: montserrat;
+    }
+
+    .logo {
+      height: 25px;
+      width: 25px;
+      margin-right: 17px;
+    }
+
+    .cards {
+      margin-top: 186px;
+      padding-top: 5px;
+      display: inline-block;
+    }
+
+    .card:nth-child(1) {
+      left: -342px;
+    }
+
+    .card:nth-child(3) {
+      left: 362px;
+    }
+
+    .card:nth-child(4) {
+      left: 714px;
+      display: block;
+    }
+
+    .card {
+      min-height: 510px;
+      width: 344px;
+      position: absolute;
+    }
+
+    .main {
+      display: block;
+    }
+
+    .color-icons {
+      padding: 22px;
+    }
+
+    .color-icons img {
+      height: 30px;
+      width: auto;
+    }
+
+    .icon-header {
+      padding: 5px 20px; 
+    }
+
+    .left-column .search {
+      padding: 0;
+    }
+
+    input[type=text] {
+      width: 249px;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+}
+
+
+@media only screen 
+  and (min-device-width: 381px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .App-header {
+      top: 0;
+      height: 142px;
+      width: 414px;
+      padding-top: 29px;
+      position: fixed;
+      z-index: 1;
+    }
+
+    .App-title {
+      font-size: 20px;
+      font-family: montserrat;
+    }
+
+    .logo {
+      height: 25px;
+      width: 25px;
+      margin-right: 17px;
+    }
+
+    .cards {
+      margin-top: 186px;
+      padding-top: 5px;
+      display: inline-block;
+    }
+
+    .card:nth-child(1) {
+      left: -372px;
+    }
+
+    .card:nth-child(3) {
+      left: 392px;
+    }
+
+    .card:nth-child(4) {
+      left: 774px;
+      display: block;
+    }
+
+    .card {
+      min-height: 510px;
+      width: 374px;
+      position: absolute;
+    }
+
+    .main {
+      display: block;
+    }
+
+    .color-icons {
+      padding: 22px;
+    }
+
+    .color-icons img {
+      height: 30px;
+      width: auto;
+    }
+
+    .icon-header {
+      padding: 5px 20px; 
+    }
+
+    .left-column .search {
+      padding: 0;
+    }
+
+    input[type=text] {
+      width: 249px;
+    }
+
+    ul {
+      margin-top: 0;
+    }
 }

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 25">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #70d8b4;
+      }
+
+      .cls-1 {
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_10528" data-name="Group 10528" transform="translate(-276 -181)">
+    <g id="Rectangle_5541" data-name="Rectangle 5541" class="cls-1" transform="translate(276 181)">
+      <rect class="cls-3" width="27" height="25" rx="4"/>
+      <rect class="cls-4" x="1" y="1" width="25" height="23" rx="3"/>
+    </g>
+    <g id="Rectangle_5563" data-name="Rectangle 5563" class="cls-1" transform="translate(288 181)">
+      <rect class="cls-3" width="3" height="25"/>
+      <rect class="cls-4" x="1" y="1" width="1" height="23"/>
+    </g>
+    <g id="Group_10526" data-name="Group 10526" transform="translate(279.75 186.75)">
+      <line id="Line_727" data-name="Line 727" class="cls-2" x2="5.5"/>
+      <line id="Line_728" data-name="Line 728" class="cls-2" x2="5.5" transform="translate(0 3.5)"/>
+      <line id="Line_729" data-name="Line 729" class="cls-2" x2="5.5" transform="translate(0 7)"/>
+      <line id="Line_730" data-name="Line 730" class="cls-2" x2="5.5" transform="translate(0 10.5)"/>
+      <line id="Line_731" data-name="Line 731" class="cls-2" x2="5.5" transform="translate(0 14)"/>
+    </g>
+    <g id="Group_10527" data-name="Group 10527" transform="translate(293.75 186.75)">
+      <line id="Line_727-2" data-name="Line 727" class="cls-2" x2="5.5"/>
+      <line id="Line_728-2" data-name="Line 728" class="cls-2" x2="5.5" transform="translate(0 3.5)"/>
+      <line id="Line_729-2" data-name="Line 729" class="cls-2" x2="5.5" transform="translate(0 7)"/>
+      <line id="Line_730-2" data-name="Line 730" class="cls-2" x2="5.5" transform="translate(0 10.5)"/>
+      <line id="Line_731-2" data-name="Line 731" class="cls-2" x2="5.5" transform="translate(0 14)"/>
+    </g>
+  </g>
+</svg>

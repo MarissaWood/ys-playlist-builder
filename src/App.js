@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import Playlist from "./components/Playlist";
-// import { Link } from "react-router-dom"
 import Guidelines from "./components/Guidelines";
-import spotifylogo from "./images/spotifylogo.png";
+import logo from "./images/Logo_Yog-Playlist.svg";
+import searchPink from "./images/Icon_Search_Magenta.svg";
+import guidesGreen from "./images/Icon_Guides_Green.svg";
+import playlistBlue from "./images/Icon_Playlist_Blue.svg";
 import axios from "axios";
 
 class App extends Component {
@@ -15,8 +17,7 @@ class App extends Component {
       isLoggedIn: false,
       playlist: [],
       refreshToken: false,
-      rightColumn: "playlist" //,
-      // user_id: null
+      tab: "playlist"
     };
   }
 
@@ -45,6 +46,10 @@ class App extends Component {
     let array = [...this.state.playlist];
     array.pop();
     this.setState({ playlist: array });
+  };
+
+  changeTab = cardTab => {
+    this.setState({ tab: cardTab });
   };
 
   savePlaylist = e => {
@@ -126,7 +131,7 @@ class App extends Component {
       process.env.REACT_APP_CLIENT_ID +
       "&client_secret=" +
       process.env.REACT_APP_CLIENT_SECRET +
-      "&response_type=token&redirect_uri=http://ys-playlist.surge.sh" +
+      "&response_type=token&redirect_uri=http://yog-playlist.surge.sh" +
       // "&response_type=token&redirect_uri=http://localhost:3000" +
       "&scope=playlist-modify-private";
 
@@ -135,13 +140,16 @@ class App extends Component {
 
     if (!this.state.token) {
       login = (
-        <a href={url} className="refresh">
-          <button>Log in</button>
+        <a href={url} className="login">
+          Log in
         </a>
       );
       message = (
         <p className="alert">
-          Log in to Spotify to start building your playlist!
+          <a href={url} className="login">
+            Log in
+          </a>{" "}
+          to Spotify to start building your playlist!
         </p>
       );
     } else {
@@ -155,56 +163,94 @@ class App extends Component {
       );
     }
 
-    let toggle;
-
-    if (this.state.rightColumn === "playlist") {
-      toggle = (
+    let searchCard = <div className="search card">{message}</div>;
+    let playlistCard = (
+      <div className="playlist card">
         <Playlist
           playlist={this.state.playlist}
           clearPlaylist={this.clearPlaylist}
           removeLastSong={this.removeLastSong}
           savePlaylist={this.savePlaylist}
         />
+      </div>
+    );
+    let guideCard = (
+      <div className="guidelines card">
+        <Guidelines />
+      </div>
+    );
+
+    let cards;
+    if (this.state.tab === "search") {
+      cards = (
+        <div className="main cards">
+          {guideCard}
+          {searchCard}
+          {playlistCard}
+          {guideCard}
+        </div>
       );
     }
-    if (this.state.rightColumn === "guidelines") {
-      toggle = <Guidelines />;
+
+    if (this.state.tab === "playlist") {
+      cards = (
+        <div className="main cards">
+          {searchCard}
+          {playlistCard}
+          {guideCard}
+          {searchCard}
+        </div>
+      );
+    }
+
+    if (this.state.tab === "guide") {
+      cards = (
+        <div className="main cards">
+          {playlistCard}
+          {guideCard}
+          {searchCard}
+          {playlistCard}
+        </div>
+      );
     }
 
     return (
       <div className="App">
         <header className="App-header">
-          <img src={spotifylogo} alt=" " className="logo" />
-          <h1 className="App-title">Yoga Sculpt Playlist Building Tool</h1>
+          <img src={logo} alt=" " className="logo inner" />
+          <h1 className="App-title inner">YOG-PLAYLIST</h1>
+          <br />
           {login}
-        </header>
-        <div className="main">
-          {message}
-          <div className="right-column">
-            <form className="radio-buttons">
-              <label>
-                <input
-                  type="radio"
-                  name="right"
-                  value="playlist"
-                  onChange={this.handleOptionChange}
-                  defaultChecked
-                />
-                Show Playlist
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="right"
-                  value="guidelines"
-                  onChange={this.handleOptionChange}
-                />
-                Show Section Guidelines
-              </label>
-            </form>
-            {toggle}
+          <br />
+          <div className="color-icons">
+            <img
+              src={searchPink}
+              alt=" "
+              className="icon-header"
+              onClick={() => this.changeTab("search")}
+            />
+            <h3>SEARCH</h3>
           </div>
-        </div>
+          <div className="color-icons">
+            <img
+              src={playlistBlue}
+              alt=" "
+              className="icon-header"
+              onClick={() => this.changeTab("playlist")}
+            />
+            <h3>PLAYLIST</h3>
+          </div>
+          <div className="color-icons">
+            <img
+              src={guidesGreen}
+              alt=" "
+              className="icon-header"
+              onClick={() => this.changeTab("guide")}
+            />
+            <h3>GUIDES</h3>
+          </div>
+        </header>
+        {cards}
       </div>
     );
   }

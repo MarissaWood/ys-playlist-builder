@@ -1,6 +1,24 @@
 .playlist-song {
-    max-width: 700px;
-    display: grid;
-    grid-template-columns: 60px 1fr 80px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bottom-row div {
+    margin: 10px;
+}
+
+.bottom-row img {
+    margin-left: 30px;
 }
 

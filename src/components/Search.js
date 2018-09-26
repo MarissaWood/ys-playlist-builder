@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import SongPreview from "./SongPreview";
+import SongPreview from "./Search_SongPreview";
 import axios from "axios";
+import search from "../images/Icon_Search_White.svg";
 import "./Search.css";
 
 class Search extends Component {
@@ -12,11 +13,6 @@ class Search extends Component {
       token: "",
       offset: 0
     };
-  }
-
-  componentDidMount() {
-    // let spotify_token = window.location.hash.substr(14, 163);
-    // this.setState({ token: this.props.token });
   }
 
   handleInput = e => {
@@ -60,7 +56,7 @@ class Search extends Component {
     searchResults = this.state.searchResponseTrack.map((item, i) => {
       // console.log(item);
       return (
-        <li>
+        <li key={i}>
           <SongPreview
             title={item.name}
             artist={item.artists[0].name}
@@ -83,11 +79,21 @@ class Search extends Component {
     }
     return (
       <div className="left-column">
-        <h2>Search by Track or Artist name: </h2>
-        <form>
+        <img
+          src={search}
+          alt=" "
+          className="icon-white inner search"
+          onClick={this.handleSearch}
+        />
+        <form onSubmit={this.handleSearch}>
           <div className="search-box">
-            <input type="text" name="query" onChange={this.handleInput} />
-            <input type="submit" value="Search" onClick={this.handleSearch} />
+            <input
+              type="text"
+              placeholder="Search"
+              name="query"
+              onChange={this.handleInput}
+              onSubmit={this.handleSearch}
+            />
           </div>
         </form>
         <ul>{searchResults}</ul>

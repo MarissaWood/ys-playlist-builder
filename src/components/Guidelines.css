@@ -1,15 +1,36 @@
-
-
 .section-guidelines { 
     padding: 15px 45px;
     margin-top: 0;
 }
 
 .section-guidelines li {
-    padding: 5px;
-    font-size: 20px;
+    font-size: 1.17rem;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.cpy-logo {
-    margin-top: 20px;
-}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .card-header {
+        font-size: 16px;
+    }
+
+    .guide-white {
+        height: 27px;
+        width: 25px;
+    }
+
+    .section-guidelines li {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .section-guidelines {
+        padding: 23px;
+    }
+  }

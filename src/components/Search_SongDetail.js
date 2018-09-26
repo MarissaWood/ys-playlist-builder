@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./SongDetail.css";
+import playlist from "../images/Icon_Playlist_Magenta.svg";
+import dance from "../images/Icon_Dancing_Black.png";
+import energy from "../images/Icon_Energy_Black.png";
+import songTime from "../images/Icon_Time_Black.png";
 
 class SongDetail extends Component {
   constructor() {
@@ -11,13 +15,12 @@ class SongDetail extends Component {
   }
 
   msToTime = duration => {
-    // let milliseconds = parseInt((duration % 1000) / 100);
-    let seconds = parseInt((duration / 1000) % 60);
-    let minutes = parseInt((duration / (1000 * 60)) % 60);
+    let seconds = parseInt((duration / 1000) % 60, 10);
+    let minutes = parseInt((duration / (1000 * 60)) % 60, 10);
     // minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    return minutes + ":" + seconds; // + "." + milliseconds;
+    return minutes + ":" + seconds;
   };
 
   componentDidMount() {
@@ -73,23 +76,26 @@ class SongDetail extends Component {
     const bpm = Math.round(this.state.songData.tempo);
     return (
       <div className="details">
-        <p>
-          <strong>BPM:</strong> <br />
-          {bpm}
-        </p>
-        <p>
-          <strong>Energy:</strong> <br />
+        <div>
+          BPM:
+          <div className="BPM"> {bpm} </div>
+        </div>
+        <div>
+          <img src={energy} alt="energy" className="icon-black" /> <br />
           {this.state.songData.energy}
-        </p>
-        <p>
-          <strong>Danceability:</strong> <br />
+        </div>
+        <div>
+          <img src={dance} alt="dance" className="icon-black" /> <br />
           {this.state.songData.danceability}
-        </p>
-        <p>
-          <strong>Duration:</strong> <br />
+        </div>
+        <div>
+          <img src={songTime} alt="time" className="icon-black" /> <br />
           {time}
-        </p>
-        <button
+        </div>
+        <img
+          src={playlist}
+          alt=" "
+          className="add"
           onClick={() =>
             this.props.addToPlaylist({
               id: this.props.id,
@@ -101,9 +107,7 @@ class SongDetail extends Component {
               time: time
             })
           }
-        >
-          + to playlist
-        </button>
+        />
       </div>
     );
   }

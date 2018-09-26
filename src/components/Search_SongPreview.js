@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import "./SongPreview.css";
-import SongDetail from "./SongDetail";
+import SongDetail from "./Search_SongDetail";
 
 class SongPreview extends Component {
   render() {
     return (
       <div className="song-preview">
         <div className="topRow">
-          <img src={this.props.image} alt="song preview" className="icon" />
+          <img src={this.props.image} alt="song preview" className="album" />
           <p className="title">
-            <strong>{this.props.title}</strong>, by {this.props.artist}
+            <strong>{this.props.title}</strong>
+            <br />
+            {this.props.artist}
           </p>
         </div>
         <div className="bottomRow">
