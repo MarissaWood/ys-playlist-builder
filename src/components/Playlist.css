@@ -8,7 +8,11 @@
   padding: 0 30px;
 }
 
-button {
+.playlist-button {
+    background-color: white;
+    color: #65BFD4;
     margin: 5px;
     padding: 3px 5px;
+    border-radius: 5px;
+    display: inline-block;
 }

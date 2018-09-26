@@ -36,16 +36,23 @@ class Playlist extends Component {
     let saveButton;
     if (playlistResults[1]) {
       clearButton = (
-        <button onClick={this.props.clearPlaylist}>Clear Playlist</button>
+        <div onClick={this.props.clearPlaylist} className="playlist-button">
+          Clear Playlist
+        </div>
       );
       removeButton = (
-        <button onClick={this.props.removeLastSong}>Remove last song</button>
+        <div onClick={this.props.removeLastSong} className="playlist-button">
+          Remove last song
+        </div>
       );
       saveButton = (
         <div>
-          <button onClick={this.props.savePlaylist} className="save-playlist">
-            Save PlayList to your account
-          </button>
+          <div
+            onClick={this.props.savePlaylist}
+            className="save-playlist playlist-button"
+          >
+            Save Playlist to your account
+          </div>
           <div className="hoverText">
             Only click this button once! It will save a new playlist{" "}
             <strong>every</strong> time it is pushed.
