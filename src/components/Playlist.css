@@ -4,7 +4,7 @@
   
 .save-playlist:hover + .hoverText {
   display: block;
-  color: red;
+  color:white;
   padding: 0 30px;
 }
 
