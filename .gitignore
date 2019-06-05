@@ -22,3 +22,5 @@ yarn-debug.log*
 yarn-error.log*
 
 playlistsections.js
+
+deploy-to-surge.md
