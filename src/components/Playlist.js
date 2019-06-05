@@ -101,7 +101,7 @@ class Playlist extends Component {
           <strong>TOTAL TIME:</strong> {totalTime}
         </h2>
         <br />
-        <ul>{playlistResults}</ul>
+        <ul className="playlist-results">{playlistResults}</ul>
         {clearButton}
         {removeButton}
         {saveButton}

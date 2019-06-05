@@ -96,7 +96,7 @@ class Search extends Component {
             />
           </div>
         </form>
-        <ul>{searchResults}</ul>
+        <ul className="search-results-list">{searchResults}</ul>
         {nextButton}
       </div>
     );

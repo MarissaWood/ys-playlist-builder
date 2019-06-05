@@ -2,6 +2,13 @@
     display: none;
 }
   
+
+ul.playlist-results {
+  padding-left: 0;
+  overflow-y:scroll;
+  max-height: calc(100vh - 390px);
+}
+
 .save-playlist:hover + .hoverText {
   display: block;
   color:white;
