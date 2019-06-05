@@ -80,7 +80,7 @@ class App extends Component {
           },
           data: {
             name: "New YS Playlist",
-            description: "playlist built with ys-playlist.surge.sh",
+            description: "playlist built with yog-playlist.surge.sh",
             public: "false"
           }
         })
