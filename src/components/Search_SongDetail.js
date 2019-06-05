@@ -92,10 +92,8 @@ class SongDetail extends Component {
           <img src={songTime} alt="time" className="icon-black" /> <br />
           {time}
         </div>
-        <img
-          src={playlist}
-          alt=" "
-          className="add"
+        <div 
+          className="add-text"
           onClick={() =>
             this.props.addToPlaylist({
               id: this.props.id,
@@ -107,7 +105,15 @@ class SongDetail extends Component {
               time: time
             })
           }
-        />
+        >
+          <img
+            src={playlist}
+            alt=" "
+            className="add"
+          />
+          <br />
+          Add to <br />Playlist
+        </div>
       </div>
     );
   }
