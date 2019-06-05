@@ -8,9 +8,16 @@
 }
 
 .add {
-    height: 30px;
+    height: 20px;
     width: auto;
-    margin-top: 10px;
+    margin-top: -4px;
+    cursor: pointer;
+}
+
+.add-text {
+    font-size: 12px;
+    color: #D94D7D;
+    margin: 0;
 }
 
 .icon-black {

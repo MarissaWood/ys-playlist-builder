@@ -11,8 +11,10 @@ form {
     max-width: 50%;
 }
 
-ul {
+ul.search-results-list {
     padding-left: 0;
+    overflow-y: scroll;
+    max-height: calc(100vh - 360px);
 }
 
 li {

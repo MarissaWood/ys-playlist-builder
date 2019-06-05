@@ -73,7 +73,7 @@ class Search extends Component {
     if (this.state.searchResponseTrack[1]) {
       nextButton = (
         <button className="next" onClick={this.handleSearch}>
-          Next Page
+          Next Page > 
         </button>
       );
     }
@@ -96,7 +96,7 @@ class Search extends Component {
             />
           </div>
         </form>
-        <ul>{searchResults}</ul>
+        <ul className="search-results-list">{searchResults}</ul>
         {nextButton}
       </div>
     );
