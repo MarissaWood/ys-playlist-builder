@@ -39,6 +39,5 @@ a deployed version of this app can be found at [http://yog-playlist.surge.sh](ht
 
 In the future I would like to add the following features:
 + drag reorder songs in playlist
-+ input field for the name of the playlist they are saving
-+ disable the save playlist button after it is clicked to prevent duplicate playlists from being formed.  
++ input field for the name of the playlist they are saving  
 + make the song card disappear from search results after it is added to the playlist.
