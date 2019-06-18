@@ -4,9 +4,6 @@ import songTime from "../images/Icon_Time_Black.png";
 import arrow from "../images/Icon_Up.png";
 
 class SongDisplay extends Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
 
     let arrowUp 
@@ -15,7 +12,7 @@ class SongDisplay extends Component {
     if (this.props.index === 0) {
       arrowUp = (<div className="reorder-empty"></div>)
     } else {
-      arrowUp = (<img src={arrow} className="reorder" onClick={() => this.props.moveSongUp(this.props.index)}></img>)
+      arrowUp = (<img src={arrow} alt="UP" className="reorder" onClick={() => this.props.moveSongUp(this.props.index)}></img>)
     }
 
     if (this.props.index === this.props.playlistLength - 1) {
