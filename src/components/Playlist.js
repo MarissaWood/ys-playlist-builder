@@ -39,16 +39,21 @@ class Playlist extends Component {
 
   render() {
     let playlistResults;
-    playlistResults = this.props.playlist.map((item, i) => {
+    let playlistLength = this.props.playlist.length
+    playlistResults = this.props.playlist.map((item, idx) => {
       return (
-        <li key={i}>
+        <li key={idx}>
           <SongDisplay
             title={item.title}
             artist={item.artist}
             image={item.image}
             bpm={item.bpm}
             time={item.time}
-            key={i}
+            key={idx}
+            index={idx}
+            moveSongUp={this.props.moveSongUp}
+            moveSongDown={this.props.moveSongDown}
+            playlistLength={playlistLength}
           />
         </li>
       );

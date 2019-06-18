@@ -38,6 +38,26 @@ class App extends Component {
     });
   };
 
+  moveSongUp = idx => {
+    let array = [...this.state.playlist];
+    var song = array[idx]
+    array[idx] = array[idx - 1]
+    array[idx - 1] = song
+    this.setState({
+      playlist: array
+    })
+  }
+
+  moveSongDown = idx => {
+    let array = [...this.state.playlist];
+    var song = array[idx]
+    array[idx] = array[idx + 1]
+    array[idx + 1] = song
+    this.setState({
+      playlist: array
+    })
+  }
+
   clearPlaylist = e => {
     this.setState({ playlist: [] });
   };
@@ -171,6 +191,8 @@ class App extends Component {
           clearPlaylist={this.clearPlaylist}
           removeLastSong={this.removeLastSong}
           savePlaylist={this.savePlaylist}
+          moveSongUp={this.moveSongUp}
+          moveSongDown={this.moveSongDown}
         />
       </div>
     );
