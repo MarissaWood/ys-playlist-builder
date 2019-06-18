@@ -22,4 +22,5 @@ ul.playlist-results {
     padding: 3px 5px;
     border-radius: 5px;
     display: inline-block;
+    cursor: pointer;
 }

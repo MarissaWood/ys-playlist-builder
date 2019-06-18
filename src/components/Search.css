@@ -49,4 +49,5 @@ input[type=text] {
 
 .next {
     margin-bottom: 30px;
+    cursor: pointer;
 }
