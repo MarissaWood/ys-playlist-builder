@@ -17,48 +17,50 @@ class App extends Component {
       isLoggedIn: false,
       playlist: [],
       refreshToken: false,
-      tab: "playlist"
+      tab: "playlist",
     };
   }
 
   componentDidMount() {
-    let spotify_token = window.location.hash.substr(14, 198);
+    const hash = window.location.hash.substring(1);
+    const spotifyToken = hash.split("&")[0].split("=")[1];
+
     this.setState({
-      token: spotify_token
+      token: spotifyToken,
     });
   }
 
-  handleOptionChange = e => {
+  handleOptionChange = (e) => {
     this.setState({ rightColumn: e.target.value });
   };
 
-  addToPlaylist = song => {
+  addToPlaylist = (song) => {
     this.setState({
-      playlist: [...this.state.playlist, song]
+      playlist: [...this.state.playlist, song],
     });
   };
 
-  moveSongUp = idx => {
+  moveSongUp = (idx) => {
     let array = [...this.state.playlist];
-    var song = array[idx]
-    array[idx] = array[idx - 1]
-    array[idx - 1] = song
+    var song = array[idx];
+    array[idx] = array[idx - 1];
+    array[idx - 1] = song;
     this.setState({
-      playlist: array
-    })
-  }
+      playlist: array,
+    });
+  };
 
-  moveSongDown = idx => {
+  moveSongDown = (idx) => {
     let array = [...this.state.playlist];
-    var song = array[idx]
-    array[idx] = array[idx + 1]
-    array[idx + 1] = song
+    var song = array[idx];
+    array[idx] = array[idx + 1];
+    array[idx + 1] = song;
     this.setState({
-      playlist: array
-    })
-  }
+      playlist: array,
+    });
+  };
 
-  clearPlaylist = e => {
+  clearPlaylist = (e) => {
     this.setState({ playlist: [] });
   };
 
@@ -68,11 +70,11 @@ class App extends Component {
     this.setState({ playlist: array });
   };
 
-  changeTab = cardTab => {
+  changeTab = (cardTab) => {
     this.setState({ tab: cardTab });
   };
 
-  savePlaylist = e => {
+  savePlaylist = (e) => {
     // get user id
     e.preventDefault();
     let auth = "Bearer " + this.state.token;
@@ -80,13 +82,13 @@ class App extends Component {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: auth
-      }
+        Authorization: auth,
+      },
     };
     axios
       .get("https://api.spotify.com/v1/me", config)
       // create a new playlist
-      .then(res => {
+      .then((res) => {
         console.log(res); // response from getting user_id
         let user_id = res.data.id;
         let url = "https://api.spotify.com/v1/users/" + user_id + "/playlists";
@@ -96,15 +98,15 @@ class App extends Component {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            Authorization: auth
+            Authorization: auth,
           },
           data: {
             name: "New YS Playlist",
             description: "playlist built with yog-playlist.surge.sh",
-            public: "false"
-          }
+            public: "false",
+          },
         })
-          .then(res => {
+          .then((res) => {
             console.log(res); // response from creating the playlist
             // put together string of track uris
             let trackUris = "";
@@ -128,19 +130,19 @@ class App extends Component {
               url: addSongUrl,
               headers: {
                 "Content-Type": "application/json",
-                Authorization: auth
-              }
+                Authorization: auth,
+              },
             })
-              .then(res => console.log(res))
-              .catch(err => {
+              .then((res) => console.log(res))
+              .catch((err) => {
                 console.log(err);
               });
           })
-          .catch(err => {
+          .catch((err) => {
             console.log(err);
           });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
